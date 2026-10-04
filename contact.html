@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#080806",
+              snow: "#f2f2f2",
+              gold: { DEFAULT: "#ddca67", dim: "rgba(219,199,97,0.79)" },
+            },
+            fontFamily: {
+              display: ["Arlita"],
+              nav: ['"Clash Display"'],
+              body: ['"Clash Grotesk"'],
+            },
+            letterSpacing: { body: "0.44px" },
+            // desktop-first breakpoints from the brief: tablet <= 1024px, mobile <= 768px
+            screens: { tablet: { max: "1024px" }, mobile: { max: "768px" } },
+          },
+        },
+      };
+    </script>
+    <title>Document</title>
+  </head>
+
+  <body class="transition-all duration-500 ease-in-out">
+    <header class="bg-black">
+      <div class="relative mx-auto grid min-h-[101px] max-w-[1574px] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center tablet:min-h-[80px] tablet:max-w-none tablet:grid-cols-[minmax(0,1fr)_auto_auto] tablet:px-6 mobile:min-h-[68px] mobile:px-3">
+        <a
+          href="index.html"
+          class="z-10 block w-[169px] tablet:w-[118px] mobile:w-[96px]"
+          aria-label="Royal Aviation home"
+        >
+          <img src="images/logo.png" alt="logo" class="h-full w-full object-cover" />
+        </a>
+        <nav aria-label="Primary" class="col-start-2 justify-self-center tablet:hidden">
+          <ul class="flex items-center gap-[60px] font-nav text-[20px] font-medium capitalize leading-[25px]">
+            <li><a href="index.html" class="block px-[7px] text-white transition-colors hover:text-gold">Home</a></li>
+            <li><a href="service.html" class="block px-[7px] text-white transition-colors hover:text-gold">Our Services</a></li>
+            <li><a href="fleet.html" class="block px-[7px] text-white transition-colors hover:text-gold">Aircraft Fleet</a></li>
+            <li><a href="about.html" class="block px-[7px] text-white transition-colors hover:text-gold">About Us</a></li>
+            <li>
+              <a href="contact.html" class="inline-grid min-h-[25px] min-w-[59px] grid-cols-1 grid-rows-1 px-[7px] text-gold">
+                <img src="images/focus1.png" alt="" class="col-start-1 row-start-1 h-[40%] w-[23.6%] self-start justify-self-start" />
+                <img src="images/focus2.png" alt="" class="col-start-1 row-start-1 h-[40%] w-[23.6%] self-end justify-self-end" />
+                <span class="col-start-1 row-start-1 mx-[5px] self-center justify-self-center">Contact</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      <div
+          class="col-start-3 mr-[27px] flex items-center justify-self-end gap-[44px] tablet:col-start-2 tablet:gap-5 mobile:gap-3"
+        >
+          <button
+            type="button"
+            id="search-button"
+            aria-label="Search"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="search-dialog"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-search-02"></i>
+          </button>
+          <button
+            type="button"
+            id="account-button"
+            aria-label="Account"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="account-dialog"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px] mobile:text-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-user-03"></i>
+          </button>
+
+          <!-- Mobile hamburger menu -->
+          <button
+            type="button"
+            id="hamburger"
+            aria-label="Menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px] mobile:text-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-menu-01"></i>
+          </button>
+        </div>
+        <!-- Mobile navigation: same hamburger/dropdown behavior as the responsive navbar -->
+        <div
+          id="mobile-nav"
+          class="absolute left-0 right-0 top-full z-50 hidden border-t border-white/10 bg-black/95 px-5 pb-4 pt-2 shadow-2xl tablet:block"
+        >
+          <ul
+            id="navlinks-mobile"
+            class="flex flex-col gap-1 font-nav text-[20px] font-medium capitalize leading-[25px]"
+          >
+            <li><a href="index.html" class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold">Home</a></li>
+            <li><a href="service.html" class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold">Our Services</a></li>
+            <li><a href="fleet.html" class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold">Aircraft Fleet</a></li>
+            <li><a href="about.html" class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold">About Us</a></li>
+            <li><a href="contact.html" class="block rounded-full px-4 py-2 text-sm bg-white/15 text-gold">Contact</a></li>
+          </ul>
+        </div></div>
+    </header>
+
+      <div id="search-dialog" class="fixed inset-0 z-[100] hidden items-start justify-center bg-black/80 px-4 pt-[12vh]" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <div class="w-full max-w-[640px] rounded-2xl border border-gold/50 bg-ink p-6 text-white shadow-2xl mobile:p-5">
+        <div class="mb-5 flex items-center justify-between gap-4">
+          <h2 id="search-title" class="font-display text-3xl text-gold">Search this page</h2>
+          <button type="button" data-close-dialog="search-dialog" class="rounded-full px-3 py-2 text-2xl leading-none text-white hover:text-gold" aria-label="Close search">&times;</button>
+        </div>
+        <label for="site-search" class="mb-2 block text-sm text-white/70">Enter a keyword or topic</label>
+        <input id="site-search" type="search" class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none" placeholder="Search this page..." autocomplete="off">
+        <ul id="search-results" class="mt-4 max-h-[45vh] space-y-2 overflow-y-auto" aria-live="polite"></ul>
+      </div>
+    </div>
+
+    <div id="account-dialog" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 px-4 py-8" role="dialog" aria-modal="true" aria-labelledby="account-title">
+      <div class="w-full max-w-[480px] rounded-2xl border border-gold/50 bg-ink p-6 text-white shadow-2xl mobile:p-5">
+        <div class="mb-5 flex items-center justify-between gap-4">
+          <h2 id="account-title" class="font-display text-3xl text-gold">Your account</h2>
+          <button type="button" data-close-dialog="account-dialog" class="rounded-full px-3 py-2 text-2xl leading-none text-white hover:text-gold" aria-label="Close account panel">&times;</button>
+        </div>
+        <p class="mb-5 text-white/75">Sign in to manage your private flight enquiries.</p>
+        <form id="account-form" class="space-y-4">
+          <div>
+            <label for="account-email" class="mb-2 block text-sm text-white/70">Email address</label>
+            <input id="account-email" name="email" type="email" required autocomplete="email" class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none" placeholder="you@example.com">
+          </div>
+          <div>
+            <label for="account-password" class="mb-2 block text-sm text-white/70">Password</label>
+            <input id="account-password" name="password" type="password" required autocomplete="current-password" class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none" placeholder="Enter your password">
+          </div>
+          <button type="submit" class="w-full rounded-full bg-gold px-5 py-3 font-medium text-ink transition-colors hover:bg-yellow-200">Sign in</button>
+          <p id="account-message" class="min-h-6 text-sm text-gold" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+
+    <main>
+      <section
+        class="grid grid-cols-1 pt-[181px] text-center tablet:pt-[110px] mobile:pt-[82px]"
+        aria-labelledby="contact-hero-title"
+      >
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <h1
+            id="contact-hero-title"
+            class="font-display text-[62px] leading-[1.16] text-snow 2xl:whitespace-nowrap tablet:text-[42px] mobile:text-[28px]"
+          >
+            Connecting You To The Skies<br />
+            <span class="text-gold">Contact Us</span> Today
+          </h1>
+          <div
+            class="mx-auto mt-[89px] flex max-w-[820px] justify-center gap-x-[100px] gap-y-8 text-left tablet:mt-10 tablet:flex-wrap tablet:justify-center mobile:gap-x-10"
+          >
+            <div>
+              <p
+                class="text-[19px] uppercase leading-[25px] tracking-[0.22em] text-white mobile:text-[15px]"
+              >
+                Call Us Today
+              </p>
+              <p class="mt-[24px] text-[18px] leading-[24px] text-white">
+                +917439717205
+              </p>
+            </div>
+            <div>
+              <p
+                class="text-[19px] uppercase leading-[25px] tracking-[0.22em] text-white mobile:text-[15px]"
+              >
+                Media Inquiries
+              </p>
+              <p class="mt-[24px] text-[18px] leading-[24px] text-white">
+                pusumaity790@gmail.Com
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="grid grid-cols-1 mt-[199px] tablet:mt-24 mobile:mt-16"
+        aria-label="Contact form"
+      >
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <form action="#" method="post" class="mx-auto max-w-[1520px]">
+            <div
+              class="grid grid-cols-[211fr_607fr_649fr] gap-x-[27px] tablet:grid-cols-1 tablet:gap-y-8"
+            >
+              <div class="min-w-0">
+                <label
+                  for="f-title"
+                  class="block text-[19px] font-medium leading-[25px] text-snow"
+                  >Title</label
+                >
+
+                <div class="grid grid-cols-1 mt-[31px]">
+                  <select
+                    id="f-title"
+                    class="col-start-1 row-start-1 gold-frame gold-frame--row block h-[67px] w-full rounded-[16px] px-[24px] text-[17px] leading-5 text-snow placeholder:text-white/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:text-black appearance-none"
+                  >
+                    <option>Mr.</option>
+                    <option>Mrs.</option>
+                    <option>Ms.</option>
+                    <option>Dr.</option>
+                  </select>
+                  <span
+                    class="pointer-events-none col-start-1 row-start-1 mr-[24px] grid h-[14px] w-[14px] place-items-center self-center justify-self-end text-snow"
+                  >
+                    <i class="hgi hgi-stroke hgi-rounded hgi-arrow-down-01"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="min-w-0">
+                <label
+                  for="fast-name"
+                  class="block text-[19px] font-medium leading-[25px] text-snow"
+                  >Fast Name</label
+                >
+                <input
+                  id="fast-name"
+                  name="first_name"
+                  type="text"
+                  placeholder=""
+                  class="gold-frame gold-frame--row block h-[67px] w-full rounded-[16px] px-[24px] text-[17px] leading-5 text-snow placeholder:text-white/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold mt-[31px]"
+                />
+              </div>
+
+              <div class="min-w-0">
+                <label
+                  for="last-name"
+                  class="block text-[19px] font-medium leading-[25px] text-snow"
+                  >Last Name</label
+                >
+                <input
+                  id="last-name"
+                  name="last_name"
+                  type="text"
+                  placeholder=""
+                  class="gold-frame gold-frame--row block h-[67px] w-full rounded-[16px] px-[24px] text-[17px] leading-5 text-snow placeholder:text-white/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold mt-[31px]"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-[69px] grid grid-cols-2 gap-x-[40px] tablet:mt-8 tablet:grid-cols-1 tablet:gap-y-8"
+            >
+              <div class="min-w-0">
+                <label
+                  for="phone-number"
+                  class="block text-[19px] font-medium leading-[25px] text-snow"
+                  >Phone Number</label
+                >
+                <input
+                  id="phone-number"
+                  name="phone"
+                  type="tel"
+                  placeholder=""
+                  class="gold-frame gold-frame--row block h-[67px] w-full rounded-[16px] px-[24px] text-[17px] leading-5 text-snow placeholder:text-white/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold mt-[31px]"
+                />
+              </div>
+
+              <div class="min-w-0">
+                <label
+                  for="email"
+                  class="block text-[19px] font-medium leading-[25px] text-snow"
+                  >Email</label
+                >
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder=""
+                  class="gold-frame gold-frame--row block h-[67px] w-full rounded-[16px] px-[24px] text-[17px] leading-5 text-snow placeholder:text-white/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold mt-[31px]"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-[69px] grid grid-cols-2 gap-x-[40px] tablet:mt-8 tablet:grid-cols-1 tablet:gap-y-8"
+            >
+              <div class="min-w-0">
+                <label
+                  for="f-freq"
+                  class="block text-[19px] font-medium leading-[25px] text-snow"
+                  >How Often Do You Fly Privately?</label
+                >
+
+                <div class="grid grid-cols-1 mt-[31px]">
+                  <select
+                    id="f-freq"
+                    class="col-start-1 row-start-1 gold-frame gold-frame--row block h-[67px] w-full rounded-[16px] px-[24px] text-[17px] leading-5 text-snow placeholder:text-white/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:text-black appearance-none"
+                  >
+                    <option>Please select</option>
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                    <option>A few times a year</option>
+                    <option>First time flying privately</option>
+                  </select>
+                  <span
+                    class="pointer-events-none col-start-1 row-start-1 mr-[24px] grid h-[14px] w-[14px] place-items-center self-center justify-self-end text-snow"
+                  >
+                    <i class="hgi hgi-stroke hgi-rounded hgi-arrow-down-01"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="min-w-0">
+                <label
+                  for="f-solution"
+                  class="block text-[19px] font-medium leading-[25px] text-snow"
+                  >What Is Your Current Flying Solution?</label
+                >
+
+                <div class="grid grid-cols-1 mt-[31px]">
+                  <select
+                    id="f-solution"
+                    class="col-start-1 row-start-1 gold-frame gold-frame--row block h-[67px] w-full rounded-[16px] px-[24px] text-[17px] leading-5 text-snow placeholder:text-black/50 focus:outline focus-visible:ring-2 focus-visible:text-black focus-visible:ring-gold appearance-none"
+                  >
+                    <option>Please select</option>
+                    <option>Commercial airlines</option>
+                    <option>Fractional ownership</option>
+                    <option>Full aircraft ownership</option>
+                    <option>Charter broker</option>
+                    <option>None yet</option>
+                  </select>
+                  <span
+                    class="pointer-events-none col-start-1 row-start-1 mr-[24px] grid h-[14px] w-[14px] place-items-center self-center justify-self-end text-snow"
+                  >
+                    <i class="hgi hgi-stroke hgi-rounded hgi-arrow-down-01"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-[69px] tablet:mt-8">
+              <label
+                for="f-message"
+                class="block text-[19px] font-medium leading-[25px] text-snow"
+                >Message</label
+              >
+              <textarea
+                id="f-message"
+                name="message"
+                rows="8"
+                class="gold-frame gold-frame--row mt-[31px] block w-full resize-none rounded-[24px] px-[24px] py-[20px] text-[17px] leading-6 text-snow placeholder:text-white/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                style="min-height: 411px"
+              ></textarea>
+            </div>
+            <div class="mt-[92px] flex flex-col gap-[59px] tablet:mt-12">
+              <div class="flex items-start gap-[28px]">
+                <input
+                  id="f-marketing"
+                  type="checkbox"
+                  class="mt-[2px] h-[32px] w-[32px] shrink-0 cursor-pointer appearance-none rounded-[7px] checked:bg-gold"
+                />
+                <label
+                  for="f-marketing"
+                  class="cursor-pointer text-[19px] leading-[27px] text-white"
+                  >I Would Like To Receive Marketing Communications From
+                  VistaJet By Email, Post Or Text Message.</label
+                >
+              </div>
+
+              <div class="flex items-start gap-[28px]">
+                <input
+                  id="f-privacy"
+                  type="checkbox"
+                  class="mt-[2px] h-[32px] w-[32px] shrink-0 cursor-pointer appearance-none rounded-[7px] checked:bg-gold"
+                />
+                <label
+                  for="f-privacy"
+                  class="cursor-pointer text-[19px] leading-[27px] text-white"
+                  >Your Personal Data Will Be Processed In Accordance With Our
+                  Privacy Policy.</label
+                >
+              </div>
+            </div>
+            <div class="mt-[72px] flex justify-center tablet:mt-10">
+              <button
+                type="submit"
+                class="gold-frame inline-flex h-[66px] w-[191px] items-center justify-center gap-[21px] whitespace-nowrap rounded-full font-display text-[24px] leading-none text-snow"
+              >
+                <span>Submit</span
+                ><i
+                      class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                    ></i
+                  >
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer
+      id="contact"
+      class="border border-gold/40 mt-[328px] font-body bg-ink tablet:mt-24 mobile:mt-16"
+    >
+      <div class="mx-auto w-full max-w-[1568px] px-6">
+        <div
+          class="mx-auto grid max-w-[1520px] grid-cols-2 gap-x-10 gap-y-12 pt-[66px] xl:grid-cols-[468fr_436fr_402fr] xl:gap-x-[60px] xl:gap-y-0 2xl:gap-x-[107px] mobile:grid-cols-1"
+        >
+          <div class="col-span-2 xl:col-span-1 mobile:col-span-1">
+            <img
+              src="images/logo.png"
+              alt="Royal Aviation logo"
+              loading="lazy"
+              class=" block object-cover"
+            />
+            <p
+              class="max-w-[468px] text-[23px] font-body leading-[29px] mt-[40px] text-white"
+            >
+              Royal Aviation, a trusted choice for those valuing time, service,
+              and reliability Explore unique features to customize your private
+              flying experience your way
+            </p>
+            <p
+              class="mt-[68px] flex items-center gap-[8px] text-[23px] leading-[31px] text-white tablet:mt-8"
+            ><a href="tel:+911140689002 flex items-center">
+              <i class="hgi hgi-stroke hgi-rounded hgi-call-02 text-gold"></i>
+              <span>IN +91-11-40689002</span></a>
+            </p>
+          </div>
+          <div
+            aria-label="Footer"
+            class="grid grid-cols-[auto_auto] justify-start gap-x-10 xl:mt-[48px] xl:grid-cols-[137px_197px] xl:justify-between xl:gap-x-0 mobile:grid-cols-2 mobile:gap-x-4"
+          >
+            <ul class="flex flex-col gap-[20px]">
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Product</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Membership</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Fleet</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Airports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >E-Book</a
+                >
+              </li>
+            </ul>
+            <ul class="flex flex-col gap-[20px]">
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Blogs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Career</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Terms &amp; Condition</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >News &amp; Media</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >FAQs</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-start xl:mt-[48px] xl:items-end">
+            <div class="w-full max-w-[402px]">
+              <p class="text-[23px] leading-[31px] text-white">
+                Get The Latest Update
+              </p>
+              <form
+                action="#"
+                method="post"
+                class="mt-[23px] flex h-[61px] items-center justify-between rounded-full border border-white/15 bg-ink py-[6px] pl-[31px] pr-[6px] mobile:pl-5"
+              >
+                <label for="f-news" class="sr-only">Enter your email</label>
+                <input
+                  id="f-news"
+                  type="email"
+                  name="newsletter"
+                  placeholder="Enter Your Email"
+                  class="min-w-0 flex-1 bg-transparent text-[20px] leading-[31px] text-white/80 placeholder:text-white/80 focus:outline-none mobile:text-[16px]"
+                />
+                <button
+                  type="submit"
+                  class="h-[49px] w-[141px] shrink-0 rounded-full bg-gold text-[22px] font-medium leading-[31px] text-ink btn-solid"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+            <div class="mt-[104px] flex gap-[10px] tablet:mt-10">
+              <a
+                href="https://x.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-new-twitter text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/"
+                class="grid h-[50px] w-[50px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-instagram text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.facebook.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-facebook-02 text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.youtube.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i class="hgi hgi-stroke hgi-rounded hgi-youtube text-gold"></i
+              ></a>
+            </div>
+            <p
+              class="mt-[38px] flex flex-wrap items-center gap-y-1 text-[23px] leading-[31px] text-white"
+            >
+              <span>Delhi</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Mumbai</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Bengaluru</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Dubai</span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="mx-auto mt-[71px] max-w-[1520px] border-t border-gold/50 pb-[53px] pt-[30px] tablet:mt-12"
+        >
+          <p class="text-[23px] leading-[31px] text-white">
+            &copy; 2014-2024 All Right Reserved By <a href="index.html">Royal Aviation Services
+            Private Limited</a> 
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

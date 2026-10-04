@@ -1,0 +1,2067 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#080806",
+              snow: "#f2f2f2",
+              gold: { DEFAULT: "#ddca67", dim: "rgba(219,199,97,0.79)" },
+            },
+            fontFamily: {
+              display: ['"arlita"'],
+              nav: ['"Clash Display"'],
+              body: ['"Clash Grotesk"'],
+            },
+            letterSpacing: { body: "0.44px" },
+            screens: { tablet: { max: "1024px" }, mobile: { max: "768px" } },
+          },
+        },
+      };
+    </script>
+    <title>Royal viation</title>
+  </head>
+  <body>
+    <header class="bg-black">
+      <div
+        class="relative mx-auto grid min-h-[101px] max-w-[1574px] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center tablet:min-h-[80px] tablet:max-w-none tablet:grid-cols-[minmax(0,1fr)_auto_auto] tablet:px-6 mobile:min-h-[68px] mobile:px-3"
+      >
+        <a
+          href="index.html"
+          class="z-10 block w-[169px] tablet:w-[118px] mobile:w-[96px]"
+          aria-label="Royal Aviation home"
+        >
+          <img
+            src="images/logo.png"
+            alt="logo"
+            loading="lazy"
+            class="h-full w-full object-cover"
+          />
+        </a>
+        <nav
+          aria-label="Primary"
+          class="col-start-2 justify-self-center tablet:hidden"
+        >
+          <ul
+            class="flex items-center gap-[60px] font-nav text-[20px] font-medium capitalize leading-[25px]"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="inline-grid min-h-[25px] min-w-[59px] grid-cols-1 grid-rows-1 px-[7px] text-gold"
+              >
+                <img
+                  src="images/focus1.png"
+                  alt=""
+                  class="col-start-1 row-start-1 h-[40%] w-[23.6%] self-start justify-self-start"
+                />
+                <img
+                  src="images/focus2.png"
+                  alt=""
+                  class="col-start-1 row-start-1 h-[40%] w-[23.6%] self-end justify-self-end"
+                />
+                <span
+                  class="col-start-1 mx-[5px] row-start-1 self-center justify-self-center"
+                  >Home</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="service.html"
+                class="block px-[7px] text-white transition-colors hover:text-gold"
+                >Our Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="fleet.html"
+                class="block px-[7px] text-white transition-colors hover:text-gold"
+                >Aircraft Fleet</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="block px-[7px] text-white transition-colors hover:text-gold"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="block px-[7px] text-white transition-colors hover:text-gold"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="col-start-3 mr-[27px] flex items-center justify-self-end gap-[44px] tablet:col-start-2 tablet:gap-5 mobile:gap-3"
+        >
+          <button
+            type="button"
+            id="search-button"
+            aria-label="Search"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="search-dialog"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-search-02"></i>
+          </button>
+
+          <button
+            type="button"
+            id="account-button"
+            aria-label="Account"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="account-dialog"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px] mobile:text-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-user-03"></i>
+          </button>
+
+          <!-- Mobile hamburger menu -->
+          <button
+            type="button"
+            id="hamburger"
+            aria-label="Menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px] mobile:text-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-menu-01"></i>
+          </button>
+        </div>
+        <div
+          id="mobile-nav"
+          class="absolute left-0 top-full right-0 z-50 hidden border-t border-white/10 bg-black/95 px-5 pb-4 pt-2 shadow-2xl tablet:block"
+        >
+          <ul
+            id="navlinks-mobile"
+            class="flex flex-col gap-1 font-nav text-[20px] font-medium capitalize leading-[25px]"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block rounded-full px-4 py-2 text-sm bg-white/15 text-gold"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="service.html"
+                class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold"
+                >Our Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="fleet.html"
+                class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold"
+                >Aircraft Fleet</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div
+      id="search-dialog"
+      class="fixed inset-0 z-[100] hidden items-start justify-center bg-black/80 px-4 pt-[12vh]"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="search-title"
+    >
+      <div
+        class="w-full max-w-[640px] rounded-2xl border border-gold/50 bg-ink p-6 text-white shadow-2xl mobile:p-5"
+      >
+        <div class="mb-5 flex items-center justify-between gap-4">
+          <h2 id="search-title" class="font-display text-3xl text-gold">
+            Search this page
+          </h2>
+          <button
+            type="button"
+            data-close-dialog="search-dialog"
+            class="rounded-full px-3 py-2 text-2xl leading-none text-white hover:text-gold"
+            aria-label="Close search"
+          >
+            &times;
+          </button>
+        </div>
+        <label for="site-search" class="mb-2 block text-sm text-white/70"
+          >Enter a keyword or topic</label
+        >
+        <input
+          id="site-search"
+          type="search"
+          class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none"
+          placeholder="Search this page..."
+          autocomplete="off"
+        />
+        <ul
+          id="search-results"
+          class="mt-4 max-h-[45vh] space-y-2 overflow-y-auto"
+          aria-live="polite"
+        ></ul>
+      </div>
+    </div>
+
+    <div
+      id="account-dialog"
+      class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 px-4 py-8"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="account-title"
+    >
+      <div
+        class="w-full max-w-[480px] rounded-2xl border border-gold/50 bg-ink p-6 text-white shadow-2xl mobile:p-5"
+      >
+        <div class="mb-5 flex items-center justify-between gap-4">
+          <h2 id="account-title" class="font-display text-3xl text-gold">
+            Your account
+          </h2>
+          <button
+            type="button"
+            data-close-dialog="account-dialog"
+            class="rounded-full px-3 py-2 text-2xl leading-none text-white hover:text-gold"
+            aria-label="Close account panel"
+          >
+            &times;
+          </button>
+        </div>
+        <p class="mb-5 text-white/75">
+          Sign in to manage your private flight enquiries.
+        </p>
+        <form id="account-form" class="space-y-4">
+          <div>
+            <label for="account-email" class="mb-2 block text-sm text-white/70"
+              >Email address</label
+            >
+            <input
+              id="account-email"
+              name="email"
+              type="email"
+              required
+              autocomplete="email"
+              class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div>
+            <label
+              for="account-password"
+              class="mb-2 block text-sm text-white/70"
+              >Password</label
+            >
+            <input
+              id="account-password"
+              name="password"
+              type="password"
+              required
+              autocomplete="current-password"
+              class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none"
+              placeholder="Enter your password"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full rounded-full bg-gold px-5 py-3 font-medium text-ink transition-colors hover:bg-yellow-200"
+          >
+            Sign in
+          </button>
+          <p
+            id="account-message"
+            class="min-h-6 text-sm text-gold"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+    </div>
+    <main>
+      <section
+        id="top"
+        class="grid grid-cols-[minmax(0,1fr)] grid-rows-[minmax(0,1fr)] h-[1103px] overflow-hidden bg-ink tablet:h-[760px] mobile:h-[640px]"
+        aria-labelledby="hero-title"
+      >
+        <div
+          class="pointer-events-none col-start-1 row-start-1 grid h-[1000px] w-[1920px] grid-cols-1 grid-rows-1 justify-self-end self-start origin-top-right overflow-hidden tablet:scale-[.72] mobile:scale-[.5]"
+          aria-hidden="true"
+        >
+          <img
+            src="images/banner bg.png"
+            alt=""
+            class="col-start-1 row-start-1 h-full w-full scale-x-100 object-cover"
+            loading="lazy"
+          />
+          <div class="hero__fade col-start-1 row-start-1 h-full w-full"></div>
+        </div>
+        <div
+          class="col-start-1 row-start-1 h-full w-full tablet:bg-gradient-to-r tablet:from-black/60 tablet:to-transparent"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="col-start-1 row-start-1 z-10 mx-auto w-full max-w-[1568px] self-start px-6 pt-[306px] tablet:pt-[190px] mobile:pt-[150px]"
+        >
+          <h1
+            id="hero-title"
+            class="max-w-[828px] font-display text-[80px] font-normal capitalize leading-[1.04] text-snow tablet:whitespace-normal tablet:text-[56px] mobile:text-[38px]"
+          >
+            Charter Flight Through Out The World
+          </h1>
+          <p
+            class="mt-[16px] max-w-[661px] font-body text-[22px] capitalize leading-[30px] tracking-body text-white mobile:text-[17px] mobile:leading-[24px]"
+          >
+            Lorem ipsum dolor sit amet consectetur. Tellus nulla suspendisse est
+            odio orci convallis nibh vitae venenatis. Lorem nisl dui convallis
+            praesent.
+          </p>
+          <a
+            href="#"
+            class="max-w-[290px] mt-[51px] inline-flex items-center gap-[21px] rounded-[33px] border-2 border-white bg-[rgba(8,8,6,0.48)] px-[29px] py-[19px] font-display text-[24px] capitalize leading-[25px] text-gold backdrop-blur-[17px] tablet:mt-10 mobile:px-6 mobile:py-4 mobile:text-[20px] btn-glass"
+            ><span>Book Your Flight</span
+            ><i
+              class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+            ></i
+          ></a>
+        </div>
+      </section>
+
+      <section id="about" class="" aria-labelledby="club-title">
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <div class="flex justify-center">
+            <p
+              class="gold-frame z-10 flex h-[59px] w-[276px] max-w-full items-center justify-center rounded-[16px] font-body text-[22px] leading-none tracking-body text-snow"
+            >
+              Hello Dreamer!
+            </p>
+          </div>
+          <h2
+            id="club-title"
+            class="mx-auto mt-[25px] whitespace-nowrap text-balance text-center font-display text-[60px] leading-[1.04] text-snow tablet:whitespace-normal tablet:text-[44px] mobile:mt-5 mobile:text-[30px]"
+          >
+            Your Perfect Day With
+            <span class="text-gold"
+              >Royal<br class="mobile:hidden" />
+              Aviation Club</span
+            >
+          </h2>
+          <div
+            class="mx-auto mt-[128px] aspect-[1204/587] w-full max-w-[1204px] rounded-[44px] border border-white/[0.07] bg-[#0f100e] p-[23px_25px] tablet:mt-[64px] mobile:mt-10 mobile:rounded-[24px] mobile:p-3"
+          >
+            <div
+              class="grid h-full w-full grid-cols-1 grid-rows-1 overflow-hidden rounded-[38px] mobile:rounded-[14px]"
+            >
+              <img
+                src="images/video preview.png"
+                alt="video"
+                loading="lazy"
+                class="col-start-1 row-start-1 h-full w-full object-cover"
+              />
+              <button
+                type="button"
+                aria-label="Play video"
+                class="col-start-1 row-start-1 grid h-[90px] w-[90px] place-self-center place-items-center rounded-full border border-white/50 bg-white/10 text-center text-[52px] backdrop-blur-[6px] mobile:h-[56px] mobile:w-[56px]"
+              >
+                <i class="hgi hgi-stroke hgi-rounded hgi-play"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="fleet"
+        class="mt-[149px] tablet:mt-24 mobile:mt-16"
+        aria-labelledby="fleet-title"
+      >
+        <div class="flex justify-center">
+          <p
+            class="gold-frame z-10 flex h-[59px] w-[320px] max-w-full items-center justify-center rounded-[16px] font-body text-[22px] leading-none tracking-body text-snow"
+          >
+            Dream Come True!
+          </p>
+        </div>
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <h2
+            id="fleet-title"
+            class="mx-auto mt-[13px] whitespace-nowrap text-balance text-center font-display text-[56px] leading-[1.04] text-snow tablet:whitespace-normal tablet:text-[42px] mobile:text-[28px]"
+          >
+            &quot;Discover The Art Of Luxury<br class="mobile:hidden" />
+            Travel With <span class="text-gold">Private Jets</span>&rdquo;
+          </h2>
+          <p
+            class="mx-auto mt-[44px] max-w-[479px] text-center text-[22px] capitalize leading-[30px] tracking-body text-white mobile:text-[17px] mobile:leading-[24px]"
+          >
+            Private air travel designed around you, not the other way around.
+          </p>
+          <div
+            class="mx-auto mt-[91px] grid max-w-[1459px] grid-cols-3 gap-x-[53px] gap-y-[80px] tablet:mt-16 tablet:grid-cols-2 tablet:gap-x-8 tablet:gap-y-12 mobile:grid-cols-1"
+          >
+            <div
+              class="mx-auto grid h-[554px] w-full max-w-[451px] grid-cols-1 grid-rows-[367px_132px_55px]"
+            >
+              <div
+                class="col-start-1 row-start-1 row-span-3 h-[535px] w-full overflow-hidden rounded-t-[28px]"
+              >
+                <img
+                  src="images/privatejet1.png"
+                  alt=""
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <div
+                class="col-start-1 row-start-2 row-span-2 grid h-[187px] w-full grid-rows-[132px_55px]"
+              >
+                <div
+                  class="card-panel col-start-1 row-start-1 row-span-2 h-[180px] w-full rounded-[28px] border border-gold/30 text-center"
+                >
+                  <h3
+                    class="pt-[35px] font-display text-[29px] leading-[31px] text-snow"
+                  >
+                    Dassaultt Falcon 7x
+                  </h3>
+                  <p
+                    class="mt-[10px] text-[20px] leading-[27px] tracking-[0.4px] text-snow"
+                  >
+                    Capacity Upto 15 People
+                  </p>
+                </div>
+                <div
+                  class="col-start-1 row-start-2 -mt-[5px] h-[53px] w-[195px] justify-self-center self-start rounded-t-[26px] border border-b-0 border-gold/30 bg-[#070805]"
+                  aria-hidden="true"
+                ></div>
+                <a
+                  href="#"
+                  class="gold-frame col-start-1 row-start-2 inline-flex h-[55px] w-[185px] items-center justify-center justify-self-center self-end gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow !px-0"
+                  ><span>Book Now</span
+                  ><i
+                    class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                  ></i
+                ></a>
+              </div>
+            </div>
+            <div
+              class="mx-auto grid h-[554px] w-full max-w-[451px] grid-cols-1 grid-rows-[367px_132px_55px]"
+            >
+              <div
+                class="col-start-1 row-start-1 row-span-3 h-[535px] w-full overflow-hidden rounded-t-[28px]"
+              >
+                <img
+                  src="images/privatejet2.png"
+                  alt="privatejet2"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <div
+                class="col-start-1 row-start-2 row-span-2 grid h-[187px] w-full grid-rows-[132px_55px]"
+              >
+                <div
+                  class="card-panel col-start-1 row-start-1 row-span-2 h-[180px] w-full rounded-[28px] border border-gold/30 text-center"
+                >
+                  <h3
+                    class="pt-[35px] font-display text-[29px] leading-[31px] text-snow"
+                  >
+                    Dassaultt Falcon 7x
+                  </h3>
+                  <p
+                    class="mt-[10px] text-[20px] leading-[27px] tracking-[0.4px] text-snow"
+                  >
+                    Capacity Upto 15 People
+                  </p>
+                </div>
+                <div
+                  class="col-start-1 row-start-2 -mt-[5px] h-[53px] w-[195px] justify-self-center self-start rounded-t-[26px] border border-b-0 border-gold/30 bg-[#070805]"
+                  aria-hidden="true"
+                ></div>
+                <a
+                  href="#"
+                  class="gold-frame col-start-1 row-start-2 inline-flex h-[55px] w-[185px] items-center justify-center justify-self-center self-end gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow !px-0"
+                  ><span>Book Now</span
+                  ><i
+                    class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                  ></i
+                ></a>
+              </div>
+            </div>
+            <div
+              class="mx-auto grid h-[554px] w-full max-w-[451px] grid-cols-1 grid-rows-[367px_132px_55px]"
+            >
+              <div
+                class="col-start-1 row-start-1 row-span-3 h-[535px] w-full overflow-hidden rounded-t-[28px]"
+              >
+                <img
+                  src="images/privatejet3.png"
+                  alt="privatejet3"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <div
+                class="col-start-1 row-start-2 row-span-2 grid h-[187px] w-full grid-rows-[132px_55px]"
+              >
+                <div
+                  class="card-panel col-start-1 row-start-1 row-span-2 h-[180px] w-full rounded-[28px] border border-gold/30 text-center"
+                >
+                  <h3
+                    class="pt-[35px] font-display text-[29px] leading-[31px] text-snow"
+                  >
+                    Dassaultt Falcon 7x
+                  </h3>
+                  <p
+                    class="mt-[10px] text-[20px] leading-[27px] tracking-[0.4px] text-snow"
+                  >
+                    Capacity Upto 15 People
+                  </p>
+                </div>
+                <div
+                  class="col-start-1 row-start-2 -mt-[5px] h-[53px] w-[195px] justify-self-center self-start rounded-t-[26px] border border-b-0 border-gold/30 bg-[#070805]"
+                  aria-hidden="true"
+                ></div>
+                <a
+                  href="#"
+                  class="gold-frame col-start-1 row-start-2 inline-flex h-[55px] w-[185px] items-center justify-center justify-self-center self-end gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow !px-0"
+                  ><span>Book Now</span
+                  ><i
+                    class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                  ></i
+                ></a>
+              </div>
+            </div>
+            <div
+              class="mx-auto grid h-[554px] w-full max-w-[451px] grid-cols-1 grid-rows-[367px_132px_55px]"
+            >
+              <div
+                class="col-start-1 row-start-1 row-span-3 h-[535px] w-full overflow-hidden rounded-t-[28px]"
+              >
+                <img
+                  src="images/privatejet4.png"
+                  alt="privatejet4"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <div
+                class="col-start-1 row-start-2 row-span-2 grid h-[187px] w-full grid-rows-[132px_55px]"
+              >
+                <div
+                  class="card-panel col-start-1 row-start-1 row-span-2 h-[180px] w-full rounded-[28px] border border-gold/30 text-center"
+                >
+                  <h3
+                    class="pt-[35px] font-display text-[29px] leading-[31px] text-snow"
+                  >
+                    Dassaultt Falcon 7x
+                  </h3>
+                  <p
+                    class="mt-[10px] text-[20px] leading-[27px] tracking-[0.4px] text-snow"
+                  >
+                    Capacity Upto 15 People
+                  </p>
+                </div>
+                <div
+                  class="col-start-1 row-start-2 -mt-[5px] h-[53px] w-[195px] justify-self-center self-start rounded-t-[26px] border border-b-0 border-gold/30 bg-[#070805]"
+                  aria-hidden="true"
+                ></div>
+                <a
+                  href="#"
+                  class="gold-frame col-start-1 row-start-2 inline-flex h-[55px] w-[185px] items-center justify-center justify-self-center self-end gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow !px-0"
+                  ><span>Book Now</span
+                  ><i
+                    class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                  ></i
+                ></a>
+              </div>
+            </div>
+            <div
+              class="mx-auto grid h-[554px] w-full max-w-[451px] grid-cols-1 grid-rows-[367px_132px_55px]"
+            >
+              <div
+                class="col-start-1 row-start-1 row-span-3 h-[535px] w-full overflow-hidden rounded-t-[28px]"
+              >
+                <img
+                  src="images/privatejet5.png"
+                  alt="privatejet5"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <div
+                class="col-start-1 row-start-2 row-span-2 grid h-[187px] w-full grid-rows-[132px_55px]"
+              >
+                <div
+                  class="card-panel col-start-1 row-start-1 row-span-2 h-[180px] w-full rounded-[28px] border border-gold/30 text-center"
+                >
+                  <h3
+                    class="pt-[35px] font-display text-[29px] leading-[31px] text-snow"
+                  >
+                    Dassaultt Falcon 7x
+                  </h3>
+                  <p
+                    class="mt-[10px] text-[20px] leading-[27px] tracking-[0.4px] text-snow"
+                  >
+                    Capacity Upto 15 People
+                  </p>
+                </div>
+                <div
+                  class="col-start-1 row-start-2 -mt-[5px] h-[53px] w-[195px] justify-self-center self-start rounded-t-[26px] border border-b-0 border-gold/30 bg-[#070805]"
+                  aria-hidden="true"
+                ></div>
+                <a
+                  href="#"
+                  class="gold-frame col-start-1 row-start-2 inline-flex h-[55px] w-[185px] items-center justify-center justify-self-center self-end gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow !px-0"
+                  ><span>Book Now</span
+                  ><i
+                    class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                  ></i
+                ></a>
+              </div>
+            </div>
+            <div
+              class="mx-auto grid h-[554px] w-full max-w-[451px] grid-cols-1 grid-rows-[367px_132px_55px]"
+            >
+              <div
+                class="col-start-1 row-start-1 row-span-3 h-[535px] w-full overflow-hidden rounded-t-[28px]"
+              >
+                <img
+                  src="images/privatejet6.png"
+                  alt="privatejet6"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <div
+                class="col-start-1 row-start-2 row-span-2 grid h-[187px] w-full grid-rows-[132px_55px]"
+              >
+                <div
+                  class="card-panel col-start-1 row-start-1 row-span-2 h-[180px] w-full rounded-[28px] border border-gold/30 text-center"
+                >
+                  <h3
+                    class="pt-[35px] font-display text-[29px] leading-[31px] text-snow"
+                  >
+                    Dassaultt Falcon 7x
+                  </h3>
+                  <p
+                    class="mt-[10px] text-[20px] leading-[27px] tracking-[0.4px] text-snow"
+                  >
+                    Capacity Upto 15 People
+                  </p>
+                </div>
+                <div
+                  class="col-start-1 row-start-2 -mt-[5px] h-[53px] w-[195px] justify-self-center self-start rounded-t-[26px] border border-b-0 border-gold/30 bg-[#070805]"
+                  aria-hidden="true"
+                ></div>
+                <a
+                  href="#"
+                  class="gold-frame col-start-1 row-start-2 inline-flex h-[55px] w-[185px] items-center justify-center justify-self-center self-end gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow !px-0"
+                  ><span>Book Now</span
+                  ><i
+                    class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                  ></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="mt-[84px] flex justify-center tablet:mt-14">
+            <a
+              href="#"
+              class="gold-frame inline-flex h-[67px] items-center justify-center gap-[21px] whitespace-nowrap rounded-full px-[31px] font-display text-[24px] leading-none text-snow w-[247px]"
+              ><span>Explore More</span
+              ><i
+                class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+              ></i
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section
+        id="services"
+        class="mt-[135px] tablet:mt-24 mobile:mt-16"
+        aria-labelledby="services-title"
+      >
+        <div class="eyebrow-rules flex justify-center">
+          <p
+            class="gold-frame z-10 flex h-[59px] w-[210px] max-w-full items-center justify-center rounded-[16px] font-body text-[22px] leading-none tracking-body text-snow"
+          >
+            Services
+          </p>
+        </div>
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <h2
+            id="services-title"
+            class="mt-[43px] text-center font-display text-[58px] leading-[1.04] text-snow tablet:mt-8 tablet:text-[44px] mobile:text-[30px]"
+          >
+            Our Jet Charter <span class="text-gold">Services</span>
+          </h2>
+          <p
+            class="mx-auto mt-[20px] max-w-[639px] text-balance text-center text-[20px] capitalize leading-[28px] tracking-body text-white mobile:text-[16px] mobile:leading-[23px]"
+          >
+            Lorem ipsum dolor sit amet consectetur. In porta et tincidunt tellus
+            volutpat in. Tortor sed maecenas
+          </p>
+          <div
+            class="mt-[89px] flex flex-col gap-[40px] tablet:mt-14 tablet:gap-8"
+          >
+            <div
+              class="mx-auto grid w-full max-w-[1520px] grid-cols-[minmax(0,543px)_minmax(0,673px)] grid-rows-1 items-center justify-between gap-10 rounded-[60px] border border-gold/20 bg-[#090907] px-10 py-[74px] xl:gap-[60px] xl:px-[80px] tablet:grid-cols-1 tablet:grid-rows-[auto_auto] tablet:items-start tablet:gap-10 tablet:rounded-[40px] tablet:px-10 tablet:py-12 mobile:rounded-[28px] mobile:px-5 mobile:py-10"
+            >
+              <span
+                class="line-glow col-start-1 row-start-1 z-10 ml-[40px] -mt-[66px] h-[5px] w-[155px] self-start rounded-full bg-[#e9d95a] xl:ml-0 tablet:ml-0 tablet:-mt-[40px] mobile:-mt-[32px]"
+                aria-hidden="true"
+              ></span>
+              <div
+                class="col-start-1 row-start-1 min-w-0 w-[543px] max-w-full self-center tablet:w-full"
+              >
+                <p
+                  class="gold-frame flex h-[36px] w-[154px] items-center justify-center rounded-[8px] text-[16px] leading-none text-snow"
+                >
+                  Business
+                </p>
+                <h3
+                  class="mt-[44px] font-display text-[48px] leading-[51px] text-snow mobile:mt-6 mobile:text-[34px] mobile:leading-[38px]"
+                >
+                  <span class="text-gold">Business</span> Jet Charter
+                </h3>
+                <p
+                  class="mt-[16px] max-w-[540px] text-[24px] capitalize leading-[31px] tracking-body text-white mobile:text-[18px] mobile:leading-[26px]"
+                >
+                  Check out strategies, ask questions and learn in the most
+                  effective way!
+                </p>
+                <div class="mt-[57px] mobile:mt-8">
+                  <a
+                    href="#"
+                    class="gold-frame inline-flex h-[67px] items-center justify-center gap-[21px] whitespace-nowrap rounded-full px-[31px] font-display text-[24px] leading-none text-snow"
+                    ><span>Explore More</span
+                    ><i
+                      class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                    ></i
+                  ></a>
+                </div>
+              </div>
+              <div
+                class="col-start-2 row-start-1 h-[400px] w-[673px] max-w-full shrink-0 self-center overflow-hidden rounded-[40px] tablet:col-start-1 tablet:row-start-2 tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[24px]"
+              >
+                <img
+                  src="images/service1.png"
+                  alt="Two business travellers reviewing a tablet inside a private jet cabin"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+            <div
+              class="mx-auto grid w-full max-w-[1520px] grid-cols-[minmax(0,543px)_minmax(0,673px)] grid-rows-1 items-center justify-between gap-10 rounded-[60px] border border-gold/20 bg-[#090907] px-10 py-[74px] xl:gap-[60px] xl:px-[80px] tablet:grid-cols-1 tablet:grid-rows-[auto_auto] tablet:items-start tablet:gap-10 tablet:rounded-[40px] tablet:px-10 tablet:py-12 mobile:rounded-[28px] mobile:px-5 mobile:py-10"
+            >
+              <span
+                class="line-glow col-start-1 row-start-1 z-10 ml-[40px] -mt-[66px] h-[5px] w-[155px] self-start rounded-full bg-[#e9d95a] xl:ml-0 tablet:ml-0 tablet:-mt-[40px] mobile:-mt-[32px]"
+                aria-hidden="true"
+              ></span>
+              <div
+                class="col-start-1 row-start-1 min-w-0 w-[543px] max-w-full self-center tablet:w-full"
+              >
+                <p
+                  class="gold-frame flex h-[36px] w-[173px] items-center justify-center rounded-[8px] text-[16px] leading-none text-snow"
+                >
+                  Ambulance
+                </p>
+                <h3
+                  class="mt-[44px] font-display text-[48px] leading-[51px] text-snow mobile:mt-6 mobile:text-[34px] mobile:leading-[38px]"
+                >
+                  Air <span class="text-gold">Ambulance</span>
+                </h3>
+                <p
+                  class="mt-[16px] max-w-[540px] text-[24px] capitalize leading-[31px] tracking-body text-white mobile:text-[18px] mobile:leading-[26px]"
+                >
+                  Discuss the market, develop your mindset through networking,
+                  and seize opportunities!
+                </p>
+                <div class="mt-[57px] mobile:mt-8">
+                  <a
+                    href="#"
+                    class="gold-frame inline-flex h-[67px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow"
+                    ><span>Explore Now</span
+                    ><i
+                      class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                    ></i
+                  ></a>
+                </div>
+              </div>
+              <div
+                class="col-start-2 row-start-1 h-[400px] w-[673px] max-w-full shrink-0 self-center overflow-hidden rounded-[40px] tablet:col-start-1 tablet:row-start-2 tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[24px]"
+              >
+                <img
+                  src="images/service2.png"
+                  alt="Medical crew wheeling a stretcher beside an air ambulance jet"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+            <div
+              class="mx-auto grid w-full max-w-[1520px] grid-cols-[minmax(0,543px)_minmax(0,673px)] grid-rows-1 items-center justify-between gap-10 rounded-[60px] border border-gold/20 bg-[#090907] px-10 py-[74px] xl:gap-[60px] xl:px-[80px] tablet:grid-cols-1 tablet:grid-rows-[auto_auto] tablet:items-start tablet:gap-10 tablet:rounded-[40px] tablet:px-10 tablet:py-12 mobile:rounded-[28px] mobile:px-5 mobile:py-10"
+            >
+              <span
+                class="line-glow col-start-1 row-start-1 z-10 ml-[40px] -mt-[66px] h-[5px] w-[155px] self-start rounded-full bg-[#e9d95a] xl:ml-0 tablet:ml-0 tablet:-mt-[40px] mobile:-mt-[32px]"
+                aria-hidden="true"
+              ></span>
+              <div
+                class="col-start-1 row-start-1 min-w-0 w-[543px] max-w-full self-center tablet:w-full"
+              >
+                <p
+                  class="gold-frame flex h-[36px] w-[138px] items-center justify-center rounded-[8px] text-[16px] leading-none text-snow"
+                >
+                  Delight
+                </p>
+                <h3
+                  class="mt-[44px] font-display text-[48px] leading-[51px] text-snow mobile:mt-6 mobile:text-[34px] mobile:leading-[38px]"
+                >
+                  <span class="text-gold">Delight</span> Vacation
+                </h3>
+                <p
+                  class="mt-[16px] max-w-[540px] text-[24px] capitalize leading-[31px] tracking-body text-white mobile:text-[18px] mobile:leading-[26px]"
+                >
+                  Connect with experienced mentors every week to track progress,
+                  clear doubts, and stay motivated
+                </p>
+                <div class="mt-[57px] mobile:mt-8">
+                  <a
+                    href="#"
+                    class="gold-frame inline-flex h-[67px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow"
+                    ><span>Explore Now</span
+                    ><i
+                      class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                    ></i
+                  ></a>
+                </div>
+              </div>
+              <div
+                class="col-start-2 row-start-1 h-[400px] w-[673px] max-w-full shrink-0 self-center overflow-hidden rounded-[40px] tablet:col-start-1 tablet:row-start-2 tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[24px]"
+              >
+                <img
+                  src="images/service3.png"
+                  alt="Private jet at sunset with lounge chairs and a champagne table on the apron"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="offers"
+        class="mt-[125px] tablet:mt-24 mobile:mt-16"
+        aria-labelledby="offers-title"
+      >
+        <div class="eyebrow-rules flex justify-center">
+          <p
+            class="gold-frame z-10 flex h-[59px] w-[251px] max-w-full items-center justify-center rounded-[16px] font-body text-[22px] leading-none tracking-body text-snow"
+          >
+            Special Offer
+          </p>
+        </div>
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <h2
+            id="offers-title"
+            class="mx-auto mt-[29px] whitespace-nowrap text-balance text-center font-display text-[60px] leading-[1.04] text-snow tablet:whitespace-normal tablet:text-[44px] mobile:text-[30px]"
+          >
+            Experience Luxury In The Clouds<br class="mobile:hidden" />
+            &mdash; <span class="text-gold">Special Offer Inside</span>
+          </h2>
+          <div
+            role="table"
+            aria-label="Special offers"
+            class="mx-auto mt-[72px] w-full max-w-[1520px] tablet:mt-12"
+          >
+            <div role="rowgroup" class="tablet:hidden">
+              <div
+                role="row"
+                class="grid grid-cols-[307fr_278fr_313fr_196fr_176fr_185fr] gap-4 pl-[43px] pr-[22px] text-[18px] font-medium leading-[30px] text-snow xl:text-[22px]"
+              >
+                <div role="columnheader" class="justify-self-start">
+                  <span class="inline-block border-b border-gold/60 pb-[6px]"
+                    >Point Of Depeture</span
+                  >
+                </div>
+                <div role="columnheader" class="justify-self-start">
+                  <span class="inline-block border-b border-gold/60 pb-[6px]"
+                    >Point Of Arrival</span
+                  >
+                </div>
+                <div role="columnheader" class="justify-self-start">
+                  <span class="inline-block border-b border-gold/60 pb-[6px]"
+                    >Date Of Departure</span
+                  >
+                </div>
+                <div role="columnheader" class="justify-self-start">
+                  <span class="inline-block border-b border-gold/60 pb-[6px]"
+                    >Aircraft</span
+                  >
+                </div>
+                <div role="columnheader" class="justify-self-start">
+                  <span class="inline-block border-b border-gold/60 pb-[6px]"
+                    >Cost</span
+                  >
+                </div>
+                <div role="columnheader" class="-ml-[15px] justify-self-start">
+                  <span class="inline-block border-b border-gold/60 pb-[6px]"
+                    >Leave a Request</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              role="rowgroup"
+              class="mt-[47px] flex flex-col gap-[40px] tablet:mt-0 tablet:gap-5"
+            >
+              <div
+                role="row"
+                class="gold-frame gold-frame--row grid h-[100px] grid-cols-[307fr_278fr_313fr_196fr_176fr_185fr] items-center rounded-full pl-[43px] pr-[22px] text-[18px] leading-[30px] text-snow xl:text-[22px] tablet:h-auto tablet:grid-cols-2 tablet:gap-x-6 tablet:gap-y-5 tablet:rounded-[36px] tablet:p-6 mobile:grid-cols-1"
+              >
+                <div
+                  role="cell"
+                  data-label="Point Of Depeture"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Mumbai
+                </div>
+                <div
+                  role="cell"
+                  data-label="Point Of Arrival"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Paris
+                </div>
+                <div
+                  role="cell"
+                  data-label="Date Of Departure"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  10/08 - 11/08
+                </div>
+                <div
+                  role="cell"
+                  data-label="Aircraft"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Falcon 600
+                </div>
+                <div
+                  role="cell"
+                  data-label="Cost"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  12000 USD
+                </div>
+                <div
+                  role="cell"
+                  class="tablet:col-span-2 tablet:mt-2 mobile:col-span-1"
+                >
+                  <a
+                    href="#"
+                    class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-full max-w-[185px] !px-0"
+                    ><span>Book Now</span>
+                    <i
+                      class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+              <div
+                role="row"
+                class="gold-frame gold-frame--row grid h-[100px] grid-cols-[307fr_278fr_313fr_196fr_176fr_185fr] items-center rounded-full pl-[43px] pr-[22px] text-[18px] leading-[30px] text-snow xl:text-[22px] tablet:h-auto tablet:grid-cols-2 tablet:gap-x-6 tablet:gap-y-5 tablet:rounded-[36px] tablet:p-6 mobile:grid-cols-1"
+              >
+                <div
+                  role="cell"
+                  data-label="Point Of Depeture"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Mumbai
+                </div>
+                <div
+                  role="cell"
+                  data-label="Point Of Arrival"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Paris
+                </div>
+                <div
+                  role="cell"
+                  data-label="Date Of Departure"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  10/08 - 11/08
+                </div>
+                <div
+                  role="cell"
+                  data-label="Aircraft"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Falcon 600
+                </div>
+                <div
+                  role="cell"
+                  data-label="Cost"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  12000 USD
+                </div>
+                <div
+                  role="cell"
+                  class="tablet:col-span-2 tablet:mt-2 mobile:col-span-1"
+                >
+                  <a
+                    href="#"
+                    class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-full max-w-[185px] !px-0"
+                    ><span>Book Now</span
+                    ><i
+                      class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                    ></i
+                  ></a>
+                </div>
+              </div>
+              <div
+                role="row"
+                class="gold-frame gold-frame--row grid h-[100px] grid-cols-[307fr_278fr_313fr_196fr_176fr_185fr] items-center rounded-full pl-[43px] pr-[22px] text-[18px] leading-[30px] text-snow xl:text-[22px] tablet:h-auto tablet:grid-cols-2 tablet:gap-x-6 tablet:gap-y-5 tablet:rounded-[36px] tablet:p-6 mobile:grid-cols-1"
+              >
+                <div
+                  role="cell"
+                  data-label="Point Of Depeture"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Mumbai
+                </div>
+                <div
+                  role="cell"
+                  data-label="Point Of Arrival"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Paris
+                </div>
+                <div
+                  role="cell"
+                  data-label="Date Of Departure"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  10/08 - 11/08
+                </div>
+                <div
+                  role="cell"
+                  data-label="Aircraft"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Falcon 600
+                </div>
+                <div
+                  role="cell"
+                  data-label="Cost"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  12000 USD
+                </div>
+                <div
+                  role="cell"
+                  class="tablet:col-span-2 tablet:mt-2 mobile:col-span-1"
+                >
+                  <a
+                    href="#"
+                    class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-full max-w-[185px] !px-0"
+                    ><span>Book Now</span
+                    ><i
+                      class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                    ></i
+                  ></a>
+                </div>
+              </div>
+              <div
+                role="row"
+                class="gold-frame gold-frame--row grid h-[100px] grid-cols-[307fr_278fr_313fr_196fr_176fr_185fr] items-center rounded-full pl-[43px] pr-[22px] text-[18px] leading-[30px] text-snow xl:text-[22px] tablet:h-auto tablet:grid-cols-2 tablet:gap-x-6 tablet:gap-y-5 tablet:rounded-[36px] tablet:p-6 mobile:grid-cols-1"
+              >
+                <div
+                  role="cell"
+                  data-label="Point Of Depeture"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Mumbai
+                </div>
+                <div
+                  role="cell"
+                  data-label="Point Of Arrival"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Paris
+                </div>
+                <div
+                  role="cell"
+                  data-label="Date Of Departure"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  10/08 - 11/08
+                </div>
+                <div
+                  role="cell"
+                  data-label="Aircraft"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Falcon 600
+                </div>
+                <div
+                  role="cell"
+                  data-label="Cost"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  12000 USD
+                </div>
+                <div
+                  role="cell"
+                  class="tablet:col-span-2 tablet:mt-2 mobile:col-span-1"
+                >
+                  <a
+                    href="#"
+                    class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-full max-w-[185px] !px-0"
+                    ><span>Book Now</span
+                    ><i
+                      class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                    ></i
+                  ></a>
+                </div>
+              </div>
+              <div
+                role="row"
+                class="gold-frame gold-frame--row grid h-[100px] grid-cols-[307fr_278fr_313fr_196fr_176fr_185fr] items-center rounded-full pl-[43px] pr-[22px] text-[18px] leading-[30px] text-snow xl:text-[22px] tablet:h-auto tablet:grid-cols-2 tablet:gap-x-6 tablet:gap-y-5 tablet:rounded-[36px] tablet:p-6 mobile:grid-cols-1"
+              >
+                <div
+                  role="cell"
+                  data-label="Point Of Depeture"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Mumbai
+                </div>
+                <div
+                  role="cell"
+                  data-label="Point Of Arrival"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Paris
+                </div>
+                <div
+                  role="cell"
+                  data-label="Date Of Departure"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  10/08 - 11/08
+                </div>
+                <div
+                  role="cell"
+                  data-label="Aircraft"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  Falcon 600
+                </div>
+                <div
+                  role="cell"
+                  data-label="Cost"
+                  class="tablet:before:mb-1 tablet:before:block tablet:before:text-[14px] tablet:before:leading-none tablet:before:text-gold tablet:before:content-[attr(data-label)]"
+                >
+                  12000 USD
+                </div>
+                <div
+                  role="cell"
+                  class="tablet:col-span-2 tablet:mt-2 mobile:col-span-1"
+                >
+                  <a
+                    href="#"
+                    class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-full max-w-[185px] !px-0"
+                    ><span>Book Now</span
+                    ><i
+                      class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                    ></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-[85px] flex justify-center tablet:mt-14">
+            <a
+              href="#"
+              class="gold-frame inline-flex h-[67px] items-center justify-center gap-[21px] whitespace-nowrap rounded-full px-[31px] font-display text-[24px] leading-none text-snow w-[247px]"
+              ><span>Explore More</span
+              ><i
+                class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+              ></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="team"
+        class="mt-[148px] tablet:mt-24 mobile:mt-16"
+        aria-labelledby="team-title"
+      >
+        <div class="eyebrow-rules flex justify-center">
+          <p
+            class="gold-frame z-10 flex h-[59px] w-[223px] max-w-full items-center justify-center rounded-[16px] font-body text-[22px] leading-none tracking-body text-snow"
+          >
+            Our Team
+          </p>
+        </div>
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <h2
+            id="team-title"
+            class="mx-auto mt-[23px] whitespace-nowrap text-balance text-center font-display text-[60px] leading-[1.04] text-snow tablet:whitespace-normal tablet:text-[44px] mobile:text-[30px]"
+          >
+            Meet The Minds Behind<br class="mobile:hidden" />
+            <span class="text-gold">The Mission</span>
+          </h2>
+          <div
+            class="mx-auto mt-[58px] grid max-w-[1520px] grid-cols-2 gap-x-[24px] gap-y-10 xl:grid-cols-4 xl:gap-y-0 mobile:grid-cols-1"
+          >
+            <article
+              class="mx-auto grid h-[580px] w-full max-w-[362px] grid-cols-1 grid-rows-[448px_132px]"
+            >
+              <img
+                src="images/team1.png"
+                alt="teammember1"
+                class="col-start-1 row-start-1 row-span-2 h-[460px] w-full object-cover object-top"
+              />
+              <div
+                class="col-start-1 row-start-2 h-[132px] w-full rounded-b-[34px] border border-t-0 border-gold/30 bg-[#040503] text-center"
+              >
+                <h3
+                  class="pt-[24px] font-display text-[29px] leading-[31px] text-snow"
+                >
+                  Alicia Cierra
+                </h3>
+                <p class="mt-[6px] text-[20px] leading-[27px] text-snow">
+                  Director Of Royal Aviation
+                </p>
+                <div class="flex justify-center">
+                  <img src="images/teamAshi.png" alt="" />
+                </div>
+              </div>
+            </article>
+            <article
+              class="mx-auto grid h-[580px] w-full max-w-[362px] grid-cols-1 grid-rows-[448px_132px]"
+            >
+              <img
+                src="images/team2.png"
+                alt="teammember2"
+                class="col-start-1 row-start-1 row-span-2 h-[460px] w-full object-cover object-top"
+              />
+              <div
+                class="col-start-1 row-start-2 h-[132px] w-full rounded-b-[34px] border border-t-0 border-gold/30 bg-[#040503] text-center"
+              >
+                <h3
+                  class="pt-[24px] font-display text-[29px] leading-[31px] text-snow"
+                >
+                  Sargio Marquina
+                </h3>
+                <p class="mt-[6px] text-[20px] leading-[27px] text-snow">
+                  Managing Head
+                </p>
+                <div class="flex justify-center">
+                  <img src="images/teamAshi.png" alt="" />
+                </div>
+              </div>
+            </article>
+            <article
+              class="mx-auto grid h-[580px] w-full max-w-[362px] grid-cols-1 grid-rows-[448px_132px]"
+            >
+              <img
+                src="images/team3.png"
+                alt="teammember3"
+                class="col-start-1 row-start-1 row-span-2 h-[460px] w-full object-cover object-top"
+              />
+              <div
+                class="col-start-1 row-start-2 h-[132px] w-full rounded-b-[34px] border border-t-0 border-gold/30 bg-[#040503] text-center"
+              >
+                <h3
+                  class="pt-[24px] font-display text-[29px] leading-[31px] text-snow"
+                >
+                  Raquel Murio
+                </h3>
+                <p class="mt-[6px] text-[20px] leading-[27px] text-snow">
+                  Head Of Customer
+                </p>
+                <div class="flex justify-center">
+                  <img src="images/teamAshi.png" alt="" />
+                </div>
+              </div>
+            </article>
+            <article
+              class="mx-auto grid h-[580px] w-full max-w-[362px] grid-cols-1 grid-rows-[448px_132px]"
+            >
+              <img
+                src="images/team4.png"
+                alt="teammember4"
+                class="col-start-1 row-start-1 row-span-2 h-[460px] w-full object-cover object-top"
+              />
+              <div
+                class="col-start-1 row-start-2 h-[132px] w-full rounded-b-[34px] border border-t-0 border-gold/30 bg-[#040503] text-center"
+              >
+                <h3
+                  class="pt-[24px] font-display text-[29px] leading-[31px] text-snow"
+                >
+                  Marcedice Herara
+                </h3>
+                <p class="mt-[6px] text-[20px] leading-[27px] text-snow">
+                  Chief Executive
+                </p>
+                <div class="flex justify-center">
+                  <img src="images/teamAshi.png" alt="" />
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="mt-[67px] flex justify-center tablet:mt-14">
+            <a
+              href="#"
+              class="gold-frame inline-flex h-[67px] items-center justify-center gap-[21px] whitespace-nowrap rounded-full px-[31px] font-display text-[24px] leading-none text-snow w-[229px]"
+              ><span>Know More</span
+              ><i
+                class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+              ></i
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section
+        id="testimonials"
+        class="mt-[135px] tablet:mt-24 mobile:mt-16"
+        aria-labelledby="testimonials-title"
+      >
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <div
+            class="mx-auto w-full max-w-[1520px] rounded-[50px] bg-[#0c0c0a] px-[61px] py-[56px] tablet:px-6 tablet:py-10 mobile:rounded-[28px] mobile:px-3 mobile:py-8"
+          >
+            <div
+              class="grid w-full max-w-[1398px] grid-cols-1 grid-rows-1 rounded-[60px] border border-gold/30 bg-ink pb-[20px] px-[5px] tablet:rounded-[36px] tablet:px-6 tablet:pb-12 mobile:rounded-[24px] mobile:px-4"
+            >
+              <p
+                class="gold-frame col-start-1 row-start-1 z-10 flex h-[59px] w-[247px] -translate-y-1/2 items-center justify-center justify-self-center self-start rounded-[16px] text-[22px] leading-none tracking-body text-snow"
+              >
+                Predestined
+              </p>
+              <div
+                class="col-start-1 row-start-1 grid grid-cols-[minmax(0,678px)_minmax(0,654px)] gap-x-[17px] pt-[117px] tablet:grid-cols-1 tablet:pt-20 mobile:pt-14"
+              >
+                <div
+                  class="testi-mask mx-auto aspect-square w-full max-w-[678px] self-start"
+                >
+                  <img
+                    src="images/testimonials1.png"
+                    alt="private jet"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div class="min-w-0">
+                  <p
+                    class="gold-frame mt-[4px] flex h-[45px] w-[192px] items-center justify-center rounded-[12px] text-[18px] leading-none text-snow"
+                  >
+                    Testimonials
+                  </p>
+                  <h2
+                    id="testimonials-title"
+                    class="mt-[17px] font-display text-[56px] leading-[1.04] text-snow 2xl:whitespace-nowrap tablet:text-[40px] mobile:text-[28px]"
+                  >
+                    What Our Clients Say<br class="mobile:hidden" />
+                    About <span class="text-gold">Flying With Us</span>
+                  </h2>
+                  <div class="mt-[104px] flex flex-col gap-[29px] tablet:mt-10">
+                    <figure
+                      class="grid max-w-[630px] grid-cols-1 grid-rows-1 tablet:max-w-none"
+                    >
+                      <div
+                        class="gold-frame gold-frame--row col-start-1 row-start-1 flex h-[153px] items-start gap-[20px] rounded-[10px] px-[24px] pt-[25px] tablet:h-auto tablet:pb-6 mobile:gap-3 mobile:px-4"
+                      >
+                        <img
+                          src="images/tastimonials profile1.png"
+                          alt="Portrait"
+                          class="h-[104px] w-[99px] shrink-0 rounded-[100px] object-cover mobile:h-[72px] mobile:w-[68px]"
+                        />
+                        <figcaption class="min-w-0">
+                          <p
+                            class="text-[20px] font-medium leading-[25px] text-snow"
+                          >
+                            Mariana Dsouza
+                          </p>
+                          <div
+                            class="mt-[6px] max-w-[436px] text-[17px] capitalize leading-[24px] tracking-body text-snow"
+                          >
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur. Ultrices
+                              libero tincidunt et vitae molestie. Sed fusce
+                              turpis
+                            </p>
+                          </div>
+                        </figcaption>
+                      </div>
+                      <span
+                        class="col-start-1 row-start-1 z-10 -mr-[24px] -mt-[22px] flex justify-self-end self-start mobile:-mr-[8px]"
+                        ><img src="images/star.png" alt="star"
+                      /></span>
+                    </figure>
+                    <figure
+                      class="grid max-w-[630px] grid-cols-1 grid-rows-1 tablet:max-w-none"
+                    >
+                      <div
+                        class="gold-frame gold-frame--row col-start-1 row-start-1 flex h-[153px] items-start gap-[20px] rounded-[10px] px-[24px] pt-[25px] tablet:h-auto tablet:pb-6 mobile:gap-3 mobile:px-4"
+                      >
+                        <img
+                          src="images/testimonialsprofile2.png"
+                          alt="Portrait 2"
+                          class="h-[104px] w-[99px] shrink-0 rounded-[100px] object-cover border border-gold/40 mobile:h-[72px] mobile:w-[68px]"
+                        />
+                        <figcaption class="min-w-0">
+                          <p
+                            class="text-[20px] font-medium leading-[25px] text-snow"
+                          >
+                            Juliana Costraa
+                          </p>
+                          <blockquote
+                            class="mt-[6px] max-w-[436px] text-[17px] capitalize leading-[24px] tracking-body text-snow"
+                          >
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur. Ultrices
+                              libero tincidunt et vitae molestie. Sed fusce
+                              turpis
+                            </p>
+                          </blockquote>
+                        </figcaption>
+                      </div>
+                      <span
+                        class="col-start-1 row-start-1 z-10 -mr-[24px] -mt-[22px] flex justify-self-end self-start mobile:-mr-[8px]"
+                        ><img src="images/star.png" alt="star"
+                      /></span>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mt-[37px] grid max-w-[1375px] grid-cols-2 gap-x-[6px] gap-y-[12px] px-[50px] tablet:mt-14 tablet:grid-cols-1 tablet:gap-y-4 tablet:pl-0"
+              >
+                <figure
+                  class="flex min-h-[371px] rounded-[18px] border border-gold/15 bg-[#11110e] p-[18px_20px] tablet:min-h-0"
+                >
+                  <div
+                    class="flex-1 rounded-[16px] bg-[#0a0a08] px-[42px] pb-[24px] pt-[31px] tablet:px-6 mobile:px-5"
+                  >
+                    <span
+                      class="line-glow -mt-[28px] mb-[24px] block h-[4px] w-[80px] rounded-full bg-[#e9d95a]"
+                      aria-hidden="true"
+                    ></span>
+                    <blockquote>
+                      <p
+                        class="max-w-[519px] text-[17px] capitalize leading-[25px] tracking-body text-snow"
+                      >
+                        Lorem ipsum dolor sit amet consectetur. Arcu elit leo
+                        ipsum varius adipiscing cursus et sodales nunc.
+                        Venenatis id tortor phasellus in euismod sapien dolor
+                        nulla. Nulla ullamcorper lacus ut in eu. Aenean nulla
+                        non fames laoreet nulla.Lorem ipsum dolor sit amet
+                        consectetur. Arcu elit leo ipsum varius adipiscing
+                        cursus et sodales nunc. Venenatis id tortor phasellus in
+                        euismod sapien dolor nulla. Nulla ullamcorper lacus ut
+                        in eu. Aenean nulla non fames laoreet nulla.
+                      </p>
+                    </blockquote>
+                    <figcaption class="mt-[16px] flex items-center gap-[9px]">
+                      <img
+                        src="images/review1.png"
+                        alt="Portrait of Benjamin Martinez"
+                        class="h-[56px] w-[56px] rounded-full object-cover"
+                        loading="lazy"
+                      />
+                      <div>
+                        <p
+                          class="text-[18px] font-medium leading-[22px] text-snow"
+                        >
+                          Benjamin Martinez
+                        </p>
+                        <p
+                          class="mt-[7px] text-[12px] leading-[12px] text-snow"
+                        >
+                          Wealth AI Student
+                        </p>
+                      </div>
+                    </figcaption>
+                  </div>
+                </figure>
+                <figure
+                  class="flex min-h-[371px] rounded-[18px] border border-gold/15 bg-[#11110e] p-[18px_20px] tablet:min-h-0"
+                >
+                  <div
+                    class="flex-1 rounded-[16px] bg-[#0a0a08] px-[42px] pb-[24px] pt-[31px] tablet:px-6 mobile:px-5"
+                  >
+                    <span
+                      class="line-glow -mt-[28px] mb-[24px] block h-[4px] w-[80px] rounded-full bg-[#e9d95a]"
+                      aria-hidden="true"
+                    ></span>
+                    <blockquote>
+                      <p
+                        class="max-w-[519px] text-[17px] capitalize leading-[25px] tracking-body text-snow"
+                      >
+                        Lorem ipsum dolor sit amet consectetur. Arcu elit leo
+                        ipsum varius adipiscing cursus et sodales nunc.
+                        Venenatis id tortor phasellus in euismod sapien dolor
+                        nulla. Nulla ullamcorper lacus ut in eu. Aenean nulla
+                        non fames laoreet nulla.Lorem ipsum dolor sit amet
+                        consectetur. Arcu elit leo ipsum varius adipiscing
+                        cursus et sodales nunc. Venenatis id tortor phasellus in
+                        euismod sapien dolor nulla. Nulla ullamcorper lacus ut
+                        in eu. Aenean nulla non fames laoreet nulla.
+                      </p>
+                    </blockquote>
+                    <figcaption class="mt-[16px] flex items-center gap-[9px]">
+                      <img
+                        src="images/review2.png"
+                        alt="Portrait of Sargio Marquina"
+                        class="h-[56px] w-[56px] rounded-full object-cover"
+                        loading="lazy"
+                      />
+                      <div>
+                        <p
+                          class="text-[18px] font-medium leading-[22px] text-snow"
+                        >
+                          Sargio Marquina
+                        </p>
+                        <p
+                          class="mt-[7px] text-[12px] leading-[12px] text-snow"
+                        >
+                          Wealth AI Student
+                        </p>
+                      </div>
+                    </figcaption>
+                  </div>
+                </figure>
+                <figure
+                  class="flex min-h-[371px] rounded-[18px] border border-gold/15 bg-[#11110e] p-[18px_20px] tablet:min-h-0"
+                >
+                  <div
+                    class="flex-1 rounded-[16px] bg-[#0a0a08] px-[42px] pb-[24px] pt-[31px] tablet:px-6 mobile:px-5"
+                  >
+                    <span
+                      class="line-glow -mt-[28px] mb-[24px] block h-[4px] w-[80px] rounded-full bg-[#e9d95a]"
+                      aria-hidden="true"
+                    ></span>
+                    <blockquote>
+                      <p
+                        class="max-w-[519px] text-[17px] capitalize leading-[25px] tracking-body text-snow"
+                      >
+                        Lorem ipsum dolor sit amet consectetur. Arcu elit leo
+                        ipsum varius adipiscing cursus et sodales nunc.
+                        Venenatis id tortor phasellus in euismod sapien dolor
+                        nulla. Nulla ullamcorper lacus ut in eu. Aenean nulla
+                        non fames laoreet nulla.Lorem ipsum dolor sit amet
+                        consectetur. Arcu elit leo ipsum varius adipiscing
+                        cursus et sodales nunc. Venenatis id tortor phasellus in
+                        euismod sapien dolor nulla. Nulla ullamcorper lacus ut
+                        in eu. Aenean nulla non fames laoreet nulla.
+                      </p>
+                    </blockquote>
+                    <figcaption class="mt-[16px] flex items-center gap-[9px]">
+                      <img
+                        src="images/review3.png"
+                        alt="Portrait of Alicia Sierraa"
+                        class="h-[56px] w-[56px] rounded-full object-cover"
+                      />
+                      <div>
+                        <p
+                          class="text-[18px] font-medium leading-[22px] text-snow"
+                        >
+                          Alicia Sierraa
+                        </p>
+                        <p
+                          class="mt-[7px] text-[12px] leading-[12px] text-snow"
+                        >
+                          Wealth AI Student
+                        </p>
+                      </div>
+                    </figcaption>
+                  </div>
+                </figure>
+                <figure
+                  class="flex min-h-[371px] rounded-[18px] border border-gold/15 bg-[#11110e] p-[18px_20px] tablet:min-h-0"
+                >
+                  <div
+                    class="flex-1 rounded-[16px] bg-[#0a0a08] px-[42px] pb-[24px] pt-[31px] tablet:px-6 mobile:px-5"
+                  >
+                    <span
+                      class="line-glow -mt-[28px] mb-[24px] block h-[4px] w-[80px] rounded-full bg-[#e9d95a]"
+                      aria-hidden="true"
+                    ></span>
+                    <blockquote>
+                      <p
+                        class="max-w-[519px] text-[17px] capitalize leading-[25px] tracking-body text-snow"
+                      >
+                        Lorem ipsum dolor sit amet consectetur. Arcu elit leo
+                        ipsum varius adipiscing cursus et sodales nunc.
+                        Venenatis id tortor phasellus in euismod sapien dolor
+                        nulla. Nulla ullamcorper lacus ut in eu. Aenean nulla
+                        non fames laoreet nulla.Lorem ipsum dolor sit amet
+                        consectetur. Arcu elit leo ipsum varius adipiscing
+                        cursus et sodales nunc. Venenatis id tortor phasellus in
+                        euismod sapien dolor nulla. Nulla ullamcorper lacus ut
+                        in eu. Aenean nulla non fames laoreet nulla.
+                      </p>
+                    </blockquote>
+                    <figcaption class="mt-[16px] flex items-center gap-[9px]">
+                      <img
+                        src="images/review4.png"
+                        alt="Portrait of Marcedis Colmera"
+                        class="h-[56px] w-[56px] rounded-full object-cover"
+                      />
+                      <div>
+                        <p
+                          class="text-[18px] font-medium leading-[22px] text-snow"
+                        >
+                          Marcedis Colmera
+                        </p>
+                        <p
+                          class="mt-[7px] text-[12px] leading-[12px] text-snow"
+                        >
+                          Wealth AI Student
+                        </p>
+                      </div>
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+              <div class="my-[70px] flex justify-center tablet:mt-12">
+                <a
+                  href="#"
+                  class="gold-frame inline-flex h-[67px] items-center justify-center gap-[21px] whitespace-nowrap rounded-full px-[31px] font-display text-[24px] leading-none text-snow w-[230px]"
+                  ><span>Read More</span
+                  ><i
+                    class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 h-[20px] w-[20px] shrink-0 text-gold-dim"
+                    aria-hidden="true"
+                  ></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="membership"
+        class="mt-[203px] tablet:mt-24 mobile:mt-16"
+        aria-labelledby="membership-title"
+      >
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <div
+            class="mx-auto grid max-w-[1520px] grid-cols-[696fr_748fr] gap-x-[76px] tablet:grid-cols-1 tablet:gap-y-12"
+          >
+            <div class="mx-auto aspect-[696/1432] w-full max-w-[696px]">
+              <img
+                src="images/membership1.png"
+                alt="Collage of private jets on the apron, a sunset lounge with chairs and champagne, a couple at the jet stairs and a luxury car grille"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="min-w-0">
+              <p
+                class="gold-frame ml-[11px] mt-[14px] flex h-[36px] w-[346px] max-w-full items-center justify-center rounded-[8px] text-[16px] leading-none text-snow tablet:ml-0"
+              >
+                Nothing Ventured, Nothing Gained!
+              </p>
+              <div class="ml-[11px] flex items-end tablet:ml-0">
+                <p
+                  id="membership-title"
+                  class="font-body text-[200px] font-semibold leading-[246px] text-gold tablet:text-[150px] tablet:leading-[190px] mobile:text-[110px] mobile:leading-[140px]"
+                >
+                  30
+                </p>
+                <p
+                  class="pb-[59px] font-display text-[60px] leading-[62px] text-gold tablet:pb-10 mobile:text-[36px] mobile:leading-[40px]"
+                >
+                  Years
+                </p>
+              </div>
+              <p
+                class="ml-[21px] -mt-[40px] max-w-[527px] text-[28px] capitalize leading-[36px] tracking-body text-white tablet:ml-0 tablet:mt-0 mobile:text-[20px] mobile:leading-[28px]"
+              >
+                Three Decades, Thousands Of Journeys, One Legacy In The
+                Sky.&quot;
+              </p>
+              <form
+                action="#"
+                method="post"
+                class="mt-[85px] w-full max-w-[748px] rounded-[50px] border border-gold/25 bg-ink px-[44px] pb-[64px] pt-[60px] tablet:mt-10 tablet:rounded-[36px] tablet:px-6 mobile:px-4"
+              >
+                <div class="grid grid-cols-1 grid-rows-1">
+                  <div
+                    class="col-start-1 row-start-1 z-10 -translate-y-[40px] justify-self-center"
+                  >
+                    <img src="images/teamAshi.png" alt="" />
+                  </div>
+                  <h3
+                    class="col-start-1 row-start-1 text-center font-display text-[40px] leading-[42px] text-snow mobile:text-[28px] mobile:leading-[32px]"
+                  >
+                    Elevate Your Lifestyle &mdash;<br class="mobile:hidden" />
+                    <span class="text-gold">Join Our Aviation Club</span>
+                  </h3>
+                </div>
+                <div class="mt-[37px]">
+                  <div class="mt-[31px] first:mt-0">
+                    <label
+                      for="f-name"
+                      class="block px-[20px] text-[19px] font-medium leading-[25px] text-snow"
+                      >Enter Your Name</label
+                    >
+                    <input
+                      id="f-name"
+                      name="name"
+                      type="text"
+                      placeholder="Enter Your Name"
+                      class="gold-frame gold-frame--row mt-[14px] block h-[61px] w-full rounded-[16px] px-[20px] text-[15px] leading-5 text-snow placeholder:text-snow focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                    />
+                  </div>
+                  <div class="mt-[31px] first:mt-0">
+                    <label
+                      for="f-email"
+                      class="block px-[20px] text-[19px] font-medium leading-[25px] text-snow"
+                      >Enter Your Email</label
+                    >
+                    <input
+                      id="f-email"
+                      name="email"
+                      type="email"
+                      placeholder="@gmail.com"
+                      class="gold-frame gold-frame--row mt-[14px] block h-[61px] w-full rounded-[16px] px-[20px] text-[15px] leading-5 text-snow placeholder:text-snow focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                    />
+                  </div>
+                  <div class="mt-[31px] first:mt-0">
+                    <label
+                      for="f-phone"
+                      class="block px-[20px] text-[19px] font-medium leading-[25px] text-snow"
+                      >Enter Your Contact No.</label
+                    >
+                    <input
+                      id="f-phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+91"
+                      class="gold-frame gold-frame--row mt-[14px] block h-[61px] w-full rounded-[16px] px-[20px] text-[15px] leading-5 text-snow placeholder:text-snow focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                    />
+                  </div>
+                </div>
+                <div class="mt-[49px] flex justify-center">
+                  <div>
+                    <button
+                      type="submit"
+                      class="gold-frame inline-flex h-[67px] w-[270px] items-center justify-center gap-[21px] whitespace-nowrap rounded-full font-display text-[24px] leading-none text-snow"
+                    >
+                      <span>Subscribe Now</span
+                      ><i
+                        class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                        aria-hidden="true"
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      id="contact"
+      class="border border-gold/40 mt-[328px] font-body bg-ink tablet:mt-24 mobile:mt-16"
+    >
+      <div class="mx-auto w-full max-w-[1568px] px-6">
+        <div
+          class="mx-auto grid max-w-[1520px] grid-cols-2 gap-x-10 gap-y-12 pt-[66px] xl:grid-cols-[468fr_436fr_402fr] xl:gap-x-[60px] xl:gap-y-0 2xl:gap-x-[107px] mobile:grid-cols-1"
+        >
+          <div class="col-span-2 xl:col-span-1 mobile:col-span-1">
+            <img
+              src="images/logo.png"
+              alt="Royal Aviation logo"
+              loading="lazy"
+              class="block object-cover"
+            />
+            <p
+              class="max-w-[468px] text-[23px] font-body leading-[29px] mt-[40px] text-white"
+            >
+              Royal Aviation, a trusted choice for those valuing time, service,
+              and reliability Explore unique features to customize your private
+              flying experience your way
+            </p>
+            <p
+              class="mt-[68px] flex items-center gap-[8px] text-[23px] leading-[31px] text-white tablet:mt-8"
+            >
+              <a href="tel:+911140689002 flex items-center">
+                <i class="hgi hgi-stroke hgi-rounded hgi-call-02 text-gold"></i>
+                <span>IN +91-11-40689002</span></a
+              >
+            </p>
+          </div>
+          <div
+            aria-label="Footer"
+            class="grid grid-cols-[auto_auto] justify-start gap-x-10 xl:mt-[48px] xl:grid-cols-[137px_197px] xl:justify-between xl:gap-x-0 mobile:grid-cols-2 mobile:gap-x-4"
+          >
+            <ul class="flex flex-col gap-[20px]">
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Product</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Membership</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Fleet</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Airports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >E-Book</a
+                >
+              </li>
+            </ul>
+            <ul class="flex flex-col gap-[20px]">
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Blogs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Career</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Terms &amp; Condition</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >News &amp; Media</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >FAQs</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-start xl:mt-[48px] xl:items-end">
+            <div class="w-full max-w-[402px]">
+              <p class="text-[23px] leading-[31px] text-white">
+                Get The Latest Update
+              </p>
+              <form
+                action="#"
+                method="post"
+                class="mt-[23px] flex h-[61px] items-center justify-between rounded-full border border-white/15 bg-ink py-[6px] pl-[31px] pr-[6px] mobile:pl-5"
+              >
+                <label for="f-news" class="sr-only">Enter your email</label>
+                <input
+                  id="f-news"
+                  type="email"
+                  name="newsletter"
+                  placeholder="Enter Your Email"
+                  class="min-w-0 flex-1 bg-transparent text-[20px] leading-[31px] text-white/80 placeholder:text-white/80 focus:outline-none mobile:text-[16px]"
+                />
+                <button
+                  type="submit"
+                  class="h-[49px] w-[141px] shrink-0 rounded-full bg-gold text-[22px] font-medium leading-[31px] text-ink btn-solid"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+            <div class="mt-[104px] flex gap-[10px] tablet:mt-10">
+              <a
+                href="https://x.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-new-twitter text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/"
+                class="grid h-[50px] w-[50px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-instagram text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.facebook.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-facebook-02 text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.youtube.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i class="hgi hgi-stroke hgi-rounded hgi-youtube text-gold"></i
+              ></a>
+            </div>
+            <p
+              class="mt-[38px] flex flex-wrap items-center gap-y-1 text-[23px] leading-[31px] text-white"
+            >
+              <span>Delhi</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Mumbai</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Bengaluru</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Dubai</span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="mx-auto mt-[71px] max-w-[1520px] border-t border-gold/50 pb-[53px] pt-[30px] tablet:mt-12"
+        >
+          <p class="text-[23px] leading-[31px] text-white">
+            &copy; 2014-2024 All Right Reserved By
+            <a href="index.html">Royal Aviation Services Private Limited</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+    <!-- <script>
+      (function () {
+        var btn = document.getElementById("nav-toggle");
+        var menu = document.getElementById("mobile-menu");
+        if (!btn || !menu) return;
+
+        var icon = btn.querySelector("i.hgi");
+        var desktop = window.matchMedia("(min-width: 1025px)");
+
+        function isOpen() {
+          return btn.getAttribute("aria-expanded") === "true";
+        }
+
+        function setOpen(open) {
+          btn.setAttribute("aria-expanded", String(open));
+          menu.setAttribute("data-open", String(open));
+          if (icon) {
+            icon.classList.toggle("hgi-menu-01", !open);
+            icon.classList.toggle("hgi-cancel-01", open);
+          }
+        }
+
+
+        btn.addEventListener("click", function () {
+          setOpen(!isOpen());
+        });
+
+        menu.addEventListener("click", function (e) {
+          if (e.target.closest("a")) setOpen(false);
+        });
+
+
+        document.addEventListener("click", function (e) {
+          if (isOpen() && !menu.contains(e.target) && !btn.contains(e.target)) {
+            setOpen(false);
+          }
+        });
+
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && isOpen()) {
+            setOpen(false);
+            btn.focus();
+          }
+        });
+
+        desktop.addEventListener("change", function (e) {
+          if (e.matches) setOpen(false);
+        });
+      })();
+    </script> -->
+  </body>
+</html>

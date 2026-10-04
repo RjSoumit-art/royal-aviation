@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#080806",
+              snow: "#f2f2f2",
+              gold: { DEFAULT: "#ddca67", dim: "rgba(219,199,97,0.79)" },
+            },
+            fontFamily: {
+              display: ['"arlita"'],
+              nav: ['"Clash Display"'],
+              body: ['"Clash Grotesk"'],
+            },
+            letterSpacing: { body: "0.44px" },
+            screens: { tablet: { max: "1024px" }, mobile: { max: "768px" } },
+          },
+        },
+      };
+    </script>
+    <title>Document</title>
+  </head>
+  <body class="transition-all duration-500 ease-in-out">
+    <header class="bg-black">
+      <div class="relative mx-auto grid min-h-[101px] max-w-[1574px] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center tablet:min-h-[80px] tablet:max-w-none tablet:grid-cols-[minmax(0,1fr)_auto_auto] tablet:px-6 mobile:min-h-[68px] mobile:px-3">
+        <a
+          href="index.html"
+          class="z-10 block w-[169px] tablet:w-[118px] mobile:w-[96px]"
+          aria-label="Royal Aviation home"
+        >
+          <img src="images/logo.png" alt="logo" class="h-full w-full object-cover" />
+        </a>
+        <nav aria-label="Primary" class="col-start-2 justify-self-center tablet:hidden">
+          <ul class="flex items-center gap-[60px] font-nav text-[20px] font-medium capitalize leading-[25px]">
+            <li><a href="index.html" class="block px-[7px] text-white transition-colors hover:text-gold">Home</a></li>
+            <li><a href="service.html" class="block px-[7px] text-white transition-colors hover:text-gold">Our Services</a></li>
+            <li>
+              <a href="fleet.html" class="inline-grid min-h-[25px] min-w-[59px] grid-cols-1 grid-rows-1 px-[7px] text-gold">
+                <img src="images/focus1.png" alt="" class="col-start-1 row-start-1 h-[40%] w-[23.6%] self-start justify-self-start" />
+                <img src="images/focus2.png" alt="" class="col-start-1 row-start-1 h-[40%] w-[23.6%] self-end justify-self-end" />
+                <span class="col-start-1 row-start-1 mx-[5px] self-center justify-self-center">Aircraft Fleet</span>
+              </a>
+            </li>
+            <li><a href="about.html" class="block px-[7px] text-white transition-colors hover:text-gold">About Us</a></li>
+            <li><a href="contact.html" class="block px-[7px] text-white transition-colors hover:text-gold">Contact</a></li>
+          </ul>
+        </nav>
+        <div
+          class="col-start-3 mr-[27px] flex items-center justify-self-end gap-[44px] tablet:col-start-2 tablet:gap-5 mobile:gap-3"
+        >
+          <button
+            type="button"
+            id="search-button"
+            aria-label="Search"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="search-dialog"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-search-02"></i>
+          </button>
+          <button
+            type="button"
+            id="account-button"
+            aria-label="Account"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="account-dialog"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px] mobile:text-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-user-03"></i>
+          </button>
+
+          <!-- Mobile hamburger menu -->
+          <button
+            type="button"
+            id="hamburger"
+            aria-label="Menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px] mobile:text-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-menu-01"></i>
+          </button>
+        </div>
+        <!-- Mobile navigation: same hamburger/dropdown behavior as the responsive navbar -->
+        <div
+          id="mobile-nav"
+          class="absolute left-0 right-0 top-full z-50 hidden border-t border-white/10 bg-black/95 px-5 pb-4 pt-2 shadow-2xl tablet:block"
+        >
+          <ul
+            id="navlinks-mobile"
+            class="flex flex-col gap-1 font-nav text-[20px] font-medium capitalize leading-[25px]"
+          >
+            <li><a href="index.html" class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold">Home</a></li>
+            <li><a href="service.html" class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold">Our Services</a></li>
+            <li><a href="fleet.html" class="block rounded-full px-4 py-2 text-sm bg-white/15 text-gold">Aircraft Fleet</a></li>
+            <li><a href="about.html" class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold">About Us</a></li>
+            <li><a href="contact.html" class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold">Contact</a></li>
+          </ul>
+        </div></div>
+    </header>
+
+      <div id="search-dialog" class="fixed inset-0 z-[100] hidden items-start justify-center bg-black/80 px-4 pt-[12vh]" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <div class="w-full max-w-[640px] rounded-2xl border border-gold/50 bg-ink p-6 text-white shadow-2xl mobile:p-5">
+        <div class="mb-5 flex items-center justify-between gap-4">
+          <h2 id="search-title" class="font-display text-3xl text-gold">Search this page</h2>
+          <button type="button" data-close-dialog="search-dialog" class="rounded-full px-3 py-2 text-2xl leading-none text-white hover:text-gold" aria-label="Close search">&times;</button>
+        </div>
+        <label for="site-search" class="mb-2 block text-sm text-white/70">Enter a keyword or topic</label>
+        <input id="site-search" type="search" class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none" placeholder="Search this page..." autocomplete="off">
+        <ul id="search-results" class="mt-4 max-h-[45vh] space-y-2 overflow-y-auto" aria-live="polite"></ul>
+      </div>
+    </div>
+
+    <div id="account-dialog" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 px-4 py-8" role="dialog" aria-modal="true" aria-labelledby="account-title">
+      <div class="w-full max-w-[480px] rounded-2xl border border-gold/50 bg-ink p-6 text-white shadow-2xl mobile:p-5">
+        <div class="mb-5 flex items-center justify-between gap-4">
+          <h2 id="account-title" class="font-display text-3xl text-gold">Your account</h2>
+          <button type="button" data-close-dialog="account-dialog" class="rounded-full px-3 py-2 text-2xl leading-none text-white hover:text-gold" aria-label="Close account panel">&times;</button>
+        </div>
+        <p class="mb-5 text-white/75">Sign in to manage your private flight enquiries.</p>
+        <form id="account-form" class="space-y-4">
+          <div>
+            <label for="account-email" class="mb-2 block text-sm text-white/70">Email address</label>
+            <input id="account-email" name="email" type="email" required autocomplete="email" class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none" placeholder="you@example.com">
+          </div>
+          <div>
+            <label for="account-password" class="mb-2 block text-sm text-white/70">Password</label>
+            <input id="account-password" name="password" type="password" required autocomplete="current-password" class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none" placeholder="Enter your password">
+          </div>
+          <button type="submit" class="w-full rounded-full bg-gold px-5 py-3 font-medium text-ink transition-colors hover:bg-yellow-200">Sign in</button>
+          <p id="account-message" class="min-h-6 text-sm text-gold" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+
+    <main>
+      <section
+        class="grid grid-cols-1 pt-[233px] text-center tablet:pt-[150px] mobile:pt-[120px]"
+        aria-labelledby="fleet-hero-title"
+      >
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <h1
+            id="fleet-hero-title"
+            class="font-display text-[70px] leading-[76px] text-snow 2xl:whitespace-nowrap tablet:text-[48px] tablet:leading-[54px] mobile:text-[32px] mobile:leading-[38px]"
+          >
+            Your Private Jet Fleet.<br />
+            <span class="text-gold">Simple.</span>
+          </h1>
+          <p
+            class="mx-auto mt-[38px] max-w-[900px] text-[20px] leading-[27px] tracking-body text-white 2xl mobile:text-[17px] mobile:leading-[25px] tablet:mt-6"
+          >
+            Lorem Ipsum Dolor Sit Amet Consectetur. Tellus Nulla Suspendisse
+            Est Odio Orci Convallis Nibh Vitae
+            Venenatis. Lorem Nisl Dui Convallis
+            Praesent.
+          </p>
+          <p
+            class="mt-[35px] text-[18px] leading-[24px] text-white mobile:text-[15px]"
+          >
+            Search For Your Aircraft By Manufacturer Or Try The
+            <a href="#" class="text-gold underline-offset-2 hover:underline"
+              >Quick View</a
+            >
+          </p>
+        </div>
+      </section>
+      <section
+        class="grid grid-cols-1 mt-[97px] tablet:mt-16 mobile:mt-12"
+        aria-label="Aircraft manufacturers"
+      >
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <div
+            class="mx-auto flex max-w-[1520px] flex-col gap-[41px] tablet:gap-8"
+          >
+            <div
+              class="grid grid-cols-1 rounded-[60px] border border-gold/25 bg-ink px-10 pt-0 pb-[73px] xl:h-[548px] xl:px-[80px] tablet:pb-12 tablet:rounded-[40px] mobile:rounded-[28px] mobile:px-5 mobile:pb-10"
+            >
+              <span
+                class="line-glow mt-[2px] h-[6px] w-[155px] rounded-full bg-[#f1e28c] justify-self-start"
+                aria-hidden="true"
+              ></span>
+              <div class="mt-[65px] grid grid-cols-[minmax(0,1fr)_minmax(0,min(673px,55%))] items-start gap-10 xl:gap-[60px] tablet:mt-[40px] tablet:grid-cols-1 tablet:gap-10 mobile:mt-[32px] mobile:gap-10">
+                <div class="mt-[19px] min-w-0 flex-1 text-left tablet:mt-0">
+                  <h2
+                    class="font-display text-[48px] leading-[52px] text-snow xl:whitespace-nowrap mobile:text-[34px] mobile:leading-[40px]"
+                  >
+                    <span class="text-gold">Bombardier</span>
+                  </h2>
+                  <p
+                    class="mt-[34px] font-body max-w-[540px] text-[20px] leading-[27px] tracking-body text-white 2xl:whitespace mobile:text-[17px] mobile:leading-[25px]"
+                  >
+                    Bombardier aircraft fly up to 7,700nm with a flight time of up
+                    to 17 hours non-stop, offering seamless and time-efficient
+                    travel. With purpose-built cabin space, these aircraft are
+                    designed for ultimate comfort and productivity in-flight.
+                    Bombardier manufactures two leading aircraft families –
+                    Challenger and Global, both come with facilities .
+                  </p>
+                  <div class="mt-[59px] flex justify-start mobile:mt-8">
+                    <a
+                      href="#"
+                      class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-[326px] max-w-full !px-0"
+                      ><span>Discover Bombardier Jets</span
+                      ><i
+                        class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                      ></i
+                    ></a>
+                  </div>
+                </div>
+                <div
+                  class="h-[400px] w-[673px] max-w-full shrink-0 overflow-hidden rounded-[35px] tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[22px]"
+                >
+                  <img
+                    src="images/fleet/fleet1.png"
+                    alt="Black Bombardier private jet on the tarmac at sunset"
+                    loading="lazy"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-1 rounded-[60px] border border-gold/25 bg-ink px-10 pt-0 pb-[73px] xl:h-[548px] xl:px-[80px] tablet:pb-12 tablet:rounded-[40px] mobile:rounded-[28px] mobile:px-5 mobile:pb-10"
+            >
+              <span
+                class="line-glow mt-[2px] h-[6px] w-[155px] rounded-full bg-[#f1e28c] justify-self-end tablet:justify-self-start"
+                aria-hidden="true"
+              ></span>
+              <div class="mt-[65px] grid grid-cols-[minmax(0,1fr)_minmax(0,min(673px,55%))] items-start gap-10 xl:gap-[60px] tablet:mt-[40px] tablet:grid-cols-1 tablet:gap-10 mobile:mt-[32px] mobile:gap-10">
+                <div
+                  class="mt-[19px] min-w-0 text-right tablet:text-left tablet:mt-0"
+                >
+                  <h2
+                    class="font-display text-[48px] leading-[52px] text-snow xl:whitespace-nowrap mobile:text-[34px] mobile:leading-[40px]"
+                  >
+                    <span class="text-gold">Gulfstream</span>
+                  </h2>
+                  <p
+                    class="mt-[34px] font-body max-w-[540px] text-[20px] leading-[27px] tracking-body text-white 2xl:whitespace mobile:text-[17px] mobile:leading-[25px]"
+                  >
+                    Aircraft manufactured by Gulfstream can fly up to 4,300nm with
+                    a flight time of around 9 hours. The iconic Gulfstream
+                    business jets allow passengers to stay connected in-flight
+                    whether for business or relaxation, and arrive at destination
+                    feeling refreshed due to ultra-low cabin altitude. Aircraft
+                    accommodate up to 16 passeng
+                  </p>
+                  <div
+                    class="mt-[59px] flex justify-end tablet:justify-start mobile:mt-8"
+                  >
+                    <a
+                      href="#"
+                      class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px]  rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-[335px] max-w-full !px-0"
+                      ><span>Discover Gulfstream Jets</span
+                      ><i
+                        class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                      ></i
+                    ></a>
+                  </div>
+                </div>
+                <div
+                  class="order-first tablet:order-none h-[400px] w-[673px] max-w-full shrink-0 overflow-hidden rounded-[35px] tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[22px]"
+                >
+                  <img
+                    src="images/fleet/fleet2.png"
+                    alt="White Gulfstream private jet on the apron under a cloudy sky"
+                    loading="lazy"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-1 rounded-[60px] border border-gold/25 bg-ink px-10 pt-0 pb-[73px] xl:h-[548px] xl:px-[80px] tablet:pb-12 tablet:rounded-[40px] mobile:rounded-[28px] mobile:px-5 mobile:pb-10"
+            >
+              <span
+                class="line-glow mt-[2px] h-[6px] w-[155px] rounded-full bg-[#f1e28c] justify-self-start"
+                aria-hidden="true"
+              ></span>
+              <div class="mt-[65px] grid grid-cols-[minmax(0,1fr)_minmax(0,min(673px,55%))] items-start gap-10 xl:gap-[60px] tablet:mt-[40px] tablet:grid-cols-1 tablet:gap-10 mobile:mt-[32px] mobile:gap-10">
+                <div class="mt-[19px] min-w-0 text-left tablet:mt-0">
+                  <h2
+                    class="font-display text-[48px] leading-[52px] text-snow xl:whitespace-nowrap mobile:text-[34px] mobile:leading-[40px]"
+                  >
+                    <span class="text-gold">Embraer</span>
+                  </h2>
+                  <p
+                    class="mt-[34px] font-body max-w-[540px] text-[20px] leading-[27px] tracking-body text-white 2xl:whitespace mobile:text-[17px] mobile:leading-[25px]"
+                  >
+                    Aircraft manufactured by Embraer can fly up to 4,600nm with a
+                    flight time of around 8 hours. These Embraer business jets
+                    offer outstanding versatility and wide cabin space for up to
+                    18 passengers seated or 7 sleeping. Aircraft include the
+                    Lineage 1000E, Legacy 650/650E and Praetor 600.
+                  </p>
+                  <div class="mt-[59px] flex justify-start mobile:mt-8">
+                    <a
+                      href="#"
+                      class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-[294px] max-w-full !px-0"
+                      ><span>Discover Embraer Jets</span
+                      ><i
+                        class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                      ></i
+                    ></a>
+                  </div>
+                </div>
+                <div
+                  class="h-[400px] w-[673px] max-w-full shrink-0 overflow-hidden rounded-[35px] tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[22px]"
+                >
+                  <img
+                    src="images/fleet/fleet3.png"
+                    alt="Red and black Embraer private jet parked on the apron under a cloudy sky"
+                    loading="lazy"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-1 rounded-[60px] border border-gold/25 bg-ink px-10 pt-0 pb-[73px] xl:h-[548px] xl:px-[80px] tablet:pb-12 tablet:rounded-[40px] mobile:rounded-[28px] mobile:px-5 mobile:pb-10"
+            >
+              <span
+                class="line-glow mt-[2px] h-[6px] w-[155px] rounded-full bg-[#f1e28c] justify-self-end tablet:justify-self-start"
+                aria-hidden="true"
+              ></span>
+              <div class="mt-[65px] grid grid-cols-[minmax(0,1fr)_minmax(0,min(673px,55%))] items-start gap-10 xl:gap-[60px] tablet:mt-[40px] tablet:grid-cols-1 tablet:gap-10 mobile:mt-[32px] mobile:gap-10">
+                <div
+                  class="mt-[19px] min-w-0 text-right tablet:text-left tablet:mt-0"
+                >
+                  <h2
+                    class="font-display text-[48px] leading-[52px] text-snow xl:whitespace-nowrap mobile:text-[34px] mobile:leading-[40px]"
+                  >
+                    <span class="text-gold">Cessna</span>
+                  </h2>
+                  <p
+                    class="mt-[34px] font-body max-w-[540px] text-[20px] leading-[27px] tracking-body text-white 2xl:whitespace mobile:text-[17px] mobile:leading-[25px]"
+                  >
+                    Cessna aircraft can fly up to 4,360nm with a flight time of
+                    around 5 hours. These light jets provide stellar runway
+                    performance with comfortable cabins, which include the
+                    Citation X, Citation XL and Citation XLS/XLS+ aircraft. Cessna
+                    aircraft accommodate up to 7 passengers seated
+                  </p>
+                  <div
+                    class="mt-[59px] flex justify-end tablet:justify-start mobile:mt-8"
+                  >
+                    <a
+                      href="#"
+                      class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-[335px] max-w-full !px-0"
+                      ><span>Discover Gulfstream Jets</span
+                      ><i
+                        class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                      ></i
+                    ></a>
+                  </div>
+                </div>
+                <div
+                  class="order-first tablet:order-none h-[400px] w-[673px] max-w-full shrink-0 overflow-hidden rounded-[35px] tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[22px]"
+                >
+                  <img
+                    src="images/fleet/fleet4.png"
+                    alt="Dark Cessna private jet on the tarmac at sunset"
+                    loading="lazy"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-1 rounded-[60px] border border-gold/25 bg-ink px-10 pt-0 pb-[73px] xl:h-[548px] xl:px-[80px] tablet:pb-12 tablet:rounded-[40px] mobile:rounded-[28px] mobile:px-5 mobile:pb-10"
+            >
+              <span
+                class="line-glow mt-[2px] h-[6px] w-[155px] rounded-full bg-[#f1e28c] justify-self-start"
+                aria-hidden="true"
+              ></span>
+              <div class="mt-[65px] grid grid-cols-[minmax(0,1fr)_minmax(0,min(673px,55%))] items-start gap-10 xl:gap-[60px] tablet:mt-[40px] tablet:grid-cols-1 tablet:gap-10 mobile:mt-[32px] mobile:gap-10">
+                <div class="mt-[19px] min-w-0 flex-1 text-left tablet:mt-0">
+                  <h2
+                    class="font-display text-[48px] leading-[52px] text-snow xl:whitespace-nowrap mobile:text-[34px] mobile:leading-[40px]"
+                  >
+                    <span class="text-gold">Dassault</span>
+                  </h2>
+                  <p
+                    class="mt-[34px] font-body max-w-[540px] text-[20px] leading-[27px] tracking-body text-white 2xl:whitespace mobile:text-[17px] mobile:leading-[25px]"
+                  >
+                    Dassault aircraft can fly up to 5,950nm with a flight time of
+                    around 11 hours. Currently offered is the Falcon 7X, an
+                    aerodynamic and uniquely elegant aircraft with unrivaled
+                    performance, particularly on short runway airports. The
+                    aircraft features an advanced cabin pressure system with three
+                    ample separate living spaces .
+                  </p>
+                  <div class="mt-[59px] flex justify-start mobile:mt-8">
+                    <a
+                      href="#"
+                      class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-[294px] max-w-full !px-0"
+                      ><span>Discover Embraer Jets</span
+                      ><i
+                        class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                      ></i
+                    ></a>
+                  </div>
+                </div>
+                <div
+                  class="h-[400px] w-[673px] max-w-full shrink-0 overflow-hidden rounded-[35px] tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[22px]"
+                >
+                  <img
+                    src="images/fleet/fleet5.png"
+                    alt="White and gold Dassault Falcon private jet on the apron at sunset"
+                    loading="lazy"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="grid grid-cols-1 mt-[153px] border-y border-gold/40 tablet:mt-24 mobile:mt-16"
+        aria-label="Quote"
+      >
+        <div
+          class="mx-auto flex w-full max-w-[1084px] items-center gap-6 px-6 py-[21px] tablet:flex-wrap tablet:justify-center"
+        >
+          <span
+            class="inline-block h-[18px] w-[18px] shrink-0 rotate-45 bg-snow"
+            aria-hidden="true"
+          ></span>
+          <p
+            class="flex-1 text-center text-[17px] uppercase leading-[24px] tracking-[0.03em] text-white mobile:text-[13px]"
+          >
+            <span class="text-gold">Your Future Depends On You!</span> Nobody
+            Will Make You A Winner, Only Yourself!
+          </p>
+          <span
+            class="inline-block h-[18px] w-[18px] shrink-0 rotate-45 bg-snow"
+            aria-hidden="true"
+          ></span>
+        </div>
+      </section>
+      <section
+        class="grid grid-cols-1 mt-[153px] tablet:mt-24 mobile:mt-16"
+        aria-labelledby="faq-title"
+      >
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <div
+            class="mx-auto max-w-[1330px] rounded-[60px] border border-gold/30 bg-ink px-[60px] pb-[70px] pt-[57px] tablet:rounded-[36px] tablet:px-8 mobile:rounded-[24px] mobile:px-4 mobile:pb-10 mobile:pt-8"
+          >
+            <div class="flex justify-center">
+             <img src="images/teamAshi.png" alt="" loading="lazy">
+            </div>
+            <div class="mt-[27px] flex justify-center">
+              <p
+                class="gold-frame z-10 flex h-[53px] w-[260px] max-w-full items-center justify-center rounded-[16px] font-body text-[22px] leading-none tracking-body text-snow"
+              >
+                Common Question
+              </p>
+            </div>
+            <h2
+              id="faq-title"
+              class="mx-auto mt-[38px] max-w-[820px] text-balance text-center font-display text-[52px] leading-[1.1] text-snow 2xl:whitespace-nowrap tablet:text-[38px] mobile:text-[28px]"
+            >
+              Common Questions About<br class="hidden 2xl:inline" />
+              <span class="text-gold">Royal Aviation</span>
+            </h2>
+            <div
+              class="mx-auto mt-[62px] font-body flex max-w-[1113px] flex-col gap-[27px] tablet:mt-10 tablet:gap-5"
+            >
+              <div class="gold-frame gold-frame--row rounded-[20px]">
+                <h3 class="m-0">
+                  <button
+                    type="button"
+                    id="faq-btn-0"
+                    aria-expanded="false"
+                    aria-controls="faq-panel-0"
+                    data-faq-toggle
+                    class="group flex w-full items-center justify-between gap-6 px-[30px] py-[22px] text-left text-[20px] leading-[27px] text-snow mobile:px-5 mobile:py-[18px] mobile:text-[16px]"
+                  >
+                    <span
+                      >What types of aircraft does VistaJet offer access
+                      to?</span
+                    >
+                    <i class="hgi hgi-stroke hgi-rounded hgi-arrow-down-01"></i>
+                  </button>
+                </h3>
+                <div
+                  id="faq-panel-0"
+                  role="region"
+                  aria-labelledby="faq-btn-0"
+                  data-faq-panel
+                  class="grid grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none"
+                >
+                  <div class="min-h-0">
+                    <p
+                      class="px-[30px] pb-[24px] text-[17px] leading-[25px] tracking-body text-white mobile:px-5"
+                    >
+                      VistaJet offers access to a global fleet of Silver and Red
+                      jets, spanning light, midsize, super-midsize and heavy
+                      aircraft, so every itinerary is matched to the right
+                      cabin.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="gold-frame gold-frame--row rounded-[20px]">
+                <h3 class="m-0">
+                  <button
+                    type="button"
+                    id="faq-btn-1"
+                    aria-expanded="false"
+                    aria-controls="faq-panel-1"
+                    data-faq-toggle
+                    class="group flex w-full items-center justify-between gap-6 px-[30px] py-[22px] text-left text-[20px] leading-[27px] text-snow mobile:px-5 mobile:py-[18px] mobile:text-[16px]"
+                  >
+                    <span>Is the FlowCash course 100% online?</span>
+                    <i class="hgi hgi-stroke hgi-rounded hgi-arrow-down-01"></i>
+                  </button>
+                </h3>
+                <div
+                  id="faq-panel-1"
+                  role="region"
+                  aria-labelledby="faq-btn-1"
+                  data-faq-panel
+                  class="grid grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none"
+                >
+                  <div class="min-h-0">
+                    <p
+                      class="px-[30px] pb-[24px] text-[17px] leading-[25px] tracking-body text-white mobile:px-5"
+                    >
+                      Yes, the course is delivered entirely online so you can
+                      work through it at your own pace, wherever you are.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="gold-frame gold-frame--row rounded-[20px]">
+                <h3 class="m-0">
+                  <button
+                    type="button"
+                    id="faq-btn-2"
+                    aria-expanded="false"
+                    aria-controls="faq-panel-2"
+                    data-faq-toggle
+                    class="group flex w-full items-center justify-between gap-6 px-[30px] py-[22px] text-left text-[20px] leading-[27px] text-snow mobile:px-5 mobile:py-[18px] mobile:text-[16px]"
+                  >
+                    <span
+                      >Does the investment method presented at the club really
+                      work?</span
+                    >
+                    <i class="hgi hgi-stroke hgi-rounded hgi-arrow-down-01"></i>
+                  </button>
+                </h3>
+                <div
+                  id="faq-panel-2"
+                  role="region"
+                  aria-labelledby="faq-btn-2"
+                  data-faq-panel
+                  class="grid grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none"
+                >
+                  <div class="min-h-0">
+                    <p
+                      class="px-[30px] pb-[24px] text-[17px] leading-[25px] tracking-body text-white mobile:px-5"
+                    >
+                      The programme is our bespoke flight hour subscription
+                      plan, offering guaranteed availability at a fixed hourly
+                      rate with no depreciation and no capital risk.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="gold-frame gold-frame--row rounded-[20px]">
+                <h3 class="m-0">
+                  <button
+                    type="button"
+                    id="faq-btn-3"
+                    aria-expanded="false"
+                    aria-controls="faq-panel-3"
+                    data-faq-toggle
+                    class="group flex w-full items-center justify-between gap-6 px-[30px] py-[22px] text-left text-[20px] leading-[27px] text-snow mobile:px-5 mobile:py-[18px] mobile:text-[16px]"
+                  >
+                    <span
+                      >Does the investment method presented at the club really
+                      work?</span
+                    >
+                    <i class="hgi hgi-stroke hgi-rounded hgi-arrow-down-01"></i>
+                  </button>
+                </h3>
+                <div
+                  id="faq-panel-3"
+                  role="region"
+                  aria-labelledby="faq-btn-3"
+                  data-faq-panel
+                  class="grid grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none"
+                >
+                  <div class="min-h-0">
+                    <p
+                      class="px-[30px] pb-[24px] text-[17px] leading-[25px] tracking-body text-white mobile:px-5"
+                    >
+                      The programme is our bespoke flight hour subscription
+                      plan, offering guaranteed availability at a fixed hourly
+                      rate with no depreciation and no capital risk.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="gold-frame gold-frame--row rounded-[20px]">
+                <h3 class="m-0">
+                  <button
+                    type="button"
+                    id="faq-btn-4"
+                    aria-expanded="false"
+                    aria-controls="faq-panel-4"
+                    data-faq-toggle
+                    class="group flex w-full items-center justify-between gap-6 px-[30px] py-[22px] text-left text-[20px] leading-[27px] text-snow mobile:px-5 mobile:py-[18px] mobile:text-[16px]"
+                  >
+                    <span
+                      >Does the investment method presented at the club really
+                      work?</span
+                    >
+                    <i class="hgi hgi-stroke hgi-rounded hgi-arrow-down-01"></i>
+                  </button>
+                </h3>
+                <div
+                  id="faq-panel-4"
+                  role="region"
+                  aria-labelledby="faq-btn-4"
+                  data-faq-panel
+                  class="grid grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none"
+                >
+                  <div class="min-h-0">
+                    <p
+                      class="px-[30px] pb-[24px] text-[17px] leading-[25px] tracking-body text-white mobile:px-5"
+                    >
+                      The programme is our bespoke flight hour subscription
+                      plan, offering guaranteed availability at a fixed hourly
+                      rate with no depreciation and no capital risk.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="gold-frame gold-frame--row rounded-[20px]">
+                <h3 class="m-0">
+                  <button
+                    type="button"
+                    id="faq-btn-5"
+                    aria-expanded="false"
+                    aria-controls="faq-panel-5"
+                    data-faq-toggle
+                    class="group flex w-full items-center justify-between gap-6 px-[30px] py-[22px] text-left text-[20px] leading-[27px] text-snow mobile:px-5 mobile:py-[18px] mobile:text-[16px]"
+                  >
+                    <span
+                      >Does the investment method presented at the club really
+                      work?</span
+                    >
+                    <i class="hgi hgi-stroke hgi-rounded hgi-arrow-down-01"></i>
+                  </button>
+                </h3>
+                <div
+                  id="faq-panel-5"
+                  role="region"
+                  aria-labelledby="faq-btn-5"
+                  data-faq-panel
+                  class="grid grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none"
+                >
+                  <div class="min-h-0">
+                    <p
+                      class="px-[30px] pb-[24px] text-[17px] leading-[25px] tracking-body text-white mobile:px-5"
+                    >
+                      The programme is our bespoke flight hour subscription
+                      plan, offering guaranteed availability at a fixed hourly
+                      rate with no depreciation and no capital risk.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      id="contact"
+      class="border border-gold/40 mt-[328px] font-body bg-ink tablet:mt-24 mobile:mt-16"
+    >
+      <div class="mx-auto w-full max-w-[1568px] px-6">
+        <div
+          class="mx-auto grid max-w-[1520px] grid-cols-2 gap-x-10 gap-y-12 pt-[66px] xl:grid-cols-[468fr_436fr_402fr] xl:gap-x-[60px] xl:gap-y-0 2xl:gap-x-[107px] mobile:grid-cols-1"
+        >
+          <div class="col-span-2 xl:col-span-1 mobile:col-span-1">
+            <img
+              src="images/logo.png"
+              alt="Royal Aviation logo"
+              loading="lazy"
+              class=" block object-cover"
+            />
+            <p
+              class="max-w-[468px] text-[23px] font-body leading-[29px] mt-[40px] text-white"
+            >
+              Royal Aviation, a trusted choice for those valuing time, service,
+              and reliability Explore unique features to customize your private
+              flying experience your way
+            </p>
+            <p
+              class="mt-[68px] flex items-center gap-[8px] text-[23px] leading-[31px] text-white tablet:mt-8"
+            ><a href="tel:+911140689002 flex items-center">
+              <i class="hgi hgi-stroke hgi-rounded hgi-call-02 text-gold"></i>
+              <span>IN +91-11-40689002</span></a>
+            </p>
+          </div>
+          <div
+            aria-label="Footer"
+            class="grid grid-cols-[auto_auto] justify-start gap-x-10 xl:mt-[48px] xl:grid-cols-[137px_197px] xl:justify-between xl:gap-x-0 mobile:grid-cols-2 mobile:gap-x-4"
+          >
+            <ul class="flex flex-col gap-[20px]">
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Product</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Membership</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Fleet</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Airports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >E-Book</a
+                >
+              </li>
+            </ul>
+            <ul class="flex flex-col gap-[20px]">
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Blogs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Career</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Terms &amp; Condition</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >News &amp; Media</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >FAQs</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-start xl:mt-[48px] xl:items-end">
+            <div class="w-full max-w-[402px]">
+              <p class="text-[23px] leading-[31px] text-white">
+                Get The Latest Update
+              </p>
+              <form
+                action="#"
+                method="post"
+                class="mt-[23px] flex h-[61px] items-center justify-between rounded-full border border-white/15 bg-ink py-[6px] pl-[31px] pr-[6px] mobile:pl-5"
+              >
+                <label for="f-news" class="sr-only">Enter your email</label>
+                <input
+                  id="f-news"
+                  type="email"
+                  name="newsletter"
+                  placeholder="Enter Your Email"
+                  class="min-w-0 flex-1 bg-transparent text-[20px] leading-[31px] text-white/80 placeholder:text-white/80 focus:outline-none mobile:text-[16px]"
+                />
+                <button
+                  type="submit"
+                  class="h-[49px] w-[141px] shrink-0 rounded-full bg-gold text-[22px] font-medium leading-[31px] text-ink btn-solid"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+            <div class="mt-[104px] flex gap-[10px] tablet:mt-10">
+              <a
+                href="https://x.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-new-twitter text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/"
+                class="grid h-[50px] w-[50px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-instagram text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.facebook.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-facebook-02 text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.youtube.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i class="hgi hgi-stroke hgi-rounded hgi-youtube text-gold"></i
+              ></a>
+            </div>
+            <p
+              class="mt-[38px] flex flex-wrap items-center gap-y-1 text-[23px] leading-[31px] text-white"
+            >
+              <span>Delhi</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Mumbai</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Bengaluru</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Dubai</span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="mx-auto mt-[71px] max-w-[1520px] border-t border-gold/50 pb-[53px] pt-[30px] tablet:mt-12"
+        >
+          <p class="text-[23px] leading-[31px] text-white">
+            &copy; 2014-2024 All Right Reserved By <a href="index.html">Royal Aviation Services
+            Private Limited</a> 
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

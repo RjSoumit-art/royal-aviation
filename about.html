@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#080806",
+              snow: "#f2f2f2",
+              gold: { DEFAULT: "#ddca67", dim: "rgba(219,199,97,0.79)" },
+            },
+            fontFamily: {
+              display: ['"arlita"'],
+              nav: ['"Clash Display"'],
+              body: ['"Clash Grotesk"'],
+            },
+            letterSpacing: { body: "0.44px" },
+            screens: { tablet: { max: "1024px" }, mobile: { max: "768px" } },
+          },
+        },
+      };
+    </script>
+    <title>Document</title>
+  </head>
+  <body class="transition-all duration-500 ease-in-out">
+    <header class="bg-black">
+      <div
+        class="relative mx-auto grid min-h-[101px] max-w-[1574px] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center tablet:min-h-[80px] tablet:max-w-none tablet:grid-cols-[minmax(0,1fr)_auto_auto] tablet:px-6 mobile:min-h-[68px] mobile:px-3"
+      >
+        <a
+          href="index.html"
+          class="z-10 block w-[169px] tablet:w-[118px] mobile:w-[96px]"
+          aria-label="Royal Aviation home"
+        >
+          <img
+            src="images/logo.png"
+            alt="logo"
+            class="h-full w-full object-cover"
+          />
+        </a>
+        <nav
+          aria-label="Primary"
+          class="col-start-2 justify-self-center tablet:hidden"
+        >
+          <ul
+            class="flex items-center gap-[60px] font-nav text-[20px] font-medium capitalize leading-[25px]"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block px-[7px] text-white transition-colors hover:text-gold"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="service.html"
+                class="block px-[7px] text-white transition-colors hover:text-gold"
+                >Our Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="fleet.html"
+                class="block px-[7px] text-white transition-colors hover:text-gold"
+                >Aircraft Fleet</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="inline-grid min-h-[25px] min-w-[59px] grid-cols-1 grid-rows-1 px-[7px] text-gold"
+              >
+                <img
+                  src="images/focus1.png"
+                  alt=""
+                  class="col-start-1 row-start-1 h-[40%] w-[23.6%] self-start justify-self-start"
+                />
+                <img
+                  src="images/focus2.png"
+                  alt=""
+                  class="col-start-1 row-start-1 h-[40%] w-[23.6%] self-end justify-self-end"
+                />
+                <span
+                  class="col-start-1 row-start-1 mx-[5px] self-center justify-self-center"
+                  >About Us</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="block px-[7px] text-white transition-colors hover:text-gold"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="col-start-3 mr-[27px] flex items-center justify-self-end gap-[44px] tablet:col-start-2 tablet:gap-5 mobile:gap-3"
+        >
+          <button
+            type="button"
+            id="search-button"
+            aria-label="Search"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="search-dialog"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-search-02"></i>
+          </button>
+          <button
+            type="button"
+            id="account-button"
+            aria-label="Account"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="account-dialog"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px] mobile:text-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-user-03"></i>
+          </button>
+
+          <!-- Mobile hamburger menu -->
+          <button
+            type="button"
+            id="hamburger"
+            aria-label="Menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            class="btn-icon block h-[35px] w-[35px] text-[35px] text-white mobile:h-[32px] mobile:w-[32px] mobile:text-[32px]"
+          >
+            <i class="hgi hgi-stroke hgi-rounded hgi-menu-01"></i>
+          </button>
+        </div>
+        <!-- Mobile navigation: same hamburger/dropdown behavior as the responsive navbar -->
+        <div
+          id="mobile-nav"
+          class="absolute left-0 right-0 top-full z-50 hidden border-t border-white/10 bg-black/95 px-5 pb-4 pt-2 shadow-2xl tablet:block"
+        >
+          <ul
+            id="navlinks-mobile"
+            class="flex flex-col gap-1 font-nav text-[20px] font-medium capitalize leading-[25px]"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="service.html"
+                class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold"
+                >Our Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="fleet.html"
+                class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold"
+                >Aircraft Fleet</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="block rounded-full px-4 py-2 text-sm bg-white/15 text-gold"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="block rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-gold"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div
+      id="search-dialog"
+      class="fixed inset-0 z-[100] hidden items-start justify-center bg-black/80 px-4 pt-[12vh]"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="search-title"
+    >
+      <div
+        class="w-full max-w-[640px] rounded-2xl border border-gold/50 bg-ink p-6 text-white shadow-2xl mobile:p-5"
+      >
+        <div class="mb-5 flex items-center justify-between gap-4">
+          <h2 id="search-title" class="font-display text-3xl text-gold">
+            Search this page
+          </h2>
+          <button
+            type="button"
+            data-close-dialog="search-dialog"
+            class="rounded-full px-3 py-2 text-2xl leading-none text-white hover:text-gold"
+            aria-label="Close search"
+          >
+            &times;
+          </button>
+        </div>
+        <label for="site-search" class="mb-2 block text-sm text-white/70"
+          >Enter a keyword or topic</label
+        >
+        <input
+          id="site-search"
+          type="search"
+          class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none"
+          placeholder="Search this page..."
+          autocomplete="off"
+        />
+        <ul
+          id="search-results"
+          class="mt-4 max-h-[45vh] space-y-2 overflow-y-auto"
+          aria-live="polite"
+        ></ul>
+      </div>
+    </div>
+
+    <div
+      id="account-dialog"
+      class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 px-4 py-8"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="account-title"
+    >
+      <div
+        class="w-full max-w-[480px] rounded-2xl border border-gold/50 bg-ink p-6 text-white shadow-2xl mobile:p-5"
+      >
+        <div class="mb-5 flex items-center justify-between gap-4">
+          <h2 id="account-title" class="font-display text-3xl text-gold">
+            Your account
+          </h2>
+          <button
+            type="button"
+            data-close-dialog="account-dialog"
+            class="rounded-full px-3 py-2 text-2xl leading-none text-white hover:text-gold"
+            aria-label="Close account panel"
+          >
+            &times;
+          </button>
+        </div>
+        <p class="mb-5 text-white/75">
+          Sign in to manage your private flight enquiries.
+        </p>
+        <form id="account-form" class="space-y-4">
+          <div>
+            <label for="account-email" class="mb-2 block text-sm text-white/70"
+              >Email address</label
+            >
+            <input
+              id="account-email"
+              name="email"
+              type="email"
+              required
+              autocomplete="email"
+              class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div>
+            <label
+              for="account-password"
+              class="mb-2 block text-sm text-white/70"
+              >Password</label
+            >
+            <input
+              id="account-password"
+              name="password"
+              type="password"
+              required
+              autocomplete="current-password"
+              class="w-full rounded-lg border border-white/20 bg-black px-4 py-3 text-white placeholder:text-white/50 focus:border-gold focus:outline-none"
+              placeholder="Enter your password"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full rounded-full bg-gold px-5 py-3 font-medium text-ink transition-colors hover:bg-yellow-200"
+          >
+            Sign in
+          </button>
+          <p
+            id="account-message"
+            class="min-h-6 text-sm text-gold"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+    </div>
+
+    <main>
+      <section
+        class="grid grid-cols-1 pt-[233px] tablet:pt-[150px] mobile:pt-[120px]"
+        aria-labelledby="about-title"
+      >
+        <div class="mx-auto w-full max-w-[1568px] px-6 text-center">
+          <h1
+            id="about-title"
+            class="font-display text-[80px] leading-[83px] text-snow 2xl:whitespace-nowrap tablet:text-[56px] tablet:leading-[62px] mobile:text-[38px] mobile:leading-[44px]"
+          >
+            About <span class="text-gold">Royal Aviation</span>
+          </h1>
+          <p
+            class="mx-auto mt-[49px] max-w-[960px] text-[20px] leading-[27px] tracking-body text-white 2xl:whitespace mobile:text-[17px] mobile:leading-[25px] tablet:mt-8"
+          >
+            Founded In 2004, Royal Aviation Club Revolutionized Business
+            Aviation By Pioneering A New Way To Fly: Access To A Global Fleet
+            Without Any Of The Responsibilities Of Owning An Aircraft.
+          </p>
+        </div>
+      </section>
+      <section
+        class="grid grid-cols-1 mt-[222px] tablet:mt-24 mobile:mt-16"
+        aria-label="Message from the founder"
+      >
+        <div class="mx-auto w-full max-w-[1438px] px-6">
+          <div
+            class="grid grid-cols-[minmax(0,1fr)_minmax(0,698px)] items-center gap-x-10 tablet:grid-cols-1 tablet:gap-y-12"
+          >
+            <div class="pl-[5px] tablet:pl-0">
+              <p
+                class="max-w-[560px] text-[20px] leading-[27px] tracking-body text-white mobile:text-[17px] mobile:leading-[25px]"
+              >
+                VistaJet offers access to a global fleet of silver and red jets,
+                offering an unparalleled cabin experience flying into and out of
+                the hardest to reach destinations.
+              </p>
+              <p
+                class="mt-[31px] max-w-[560px] text-[20px] leading-[27px] tracking-body text-white 2xl mobile:text-[17px] mobile:leading-[25px]"
+              >
+                Simple, Efficient, Reliable, Global: This is what we stand for,
+                and what we do best.
+              </p>
+              <img
+                src="images/about/signature.png"
+                alt="Signature of Puspendu Maity"
+                class="mt-[36px] block h-[58px] w-[192px]"
+                loading="lazy"
+              />
+              <p
+                class="mt-[26px] text-[20px] uppercase leading-[27px] tracking-[0.16em] text-white mobile:text-[16px]"
+              >
+                Puspendu Maity, Founder And Chairman
+              </p>
+            </div>
+            <div
+              class="aspect-[698/426] w-full overflow-hidden rounded-[36px] mobile:rounded-[22px]"
+            >
+              <img
+                src="images/about/abouthuman.png"
+                alt="A passenger working on a laptop in a private jet cabin at sunset"
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="grid grid-cols-1 mt-[200px] tablet:mt-24 mobile:mt-16"
+        aria-label="About Royal Aviation"
+      >
+        <div class="mx-auto w-full max-w-[1568px] px-6">
+          <div
+            class="mx-auto flex max-w-[1520px] flex-col gap-[40px] tablet:gap-8"
+          >
+            <article
+              class="grid grid-cols-1 rounded-[60px] border border-gold/25 bg-ink px-10 pt-0 pb-[73px] xl:h-[548px] xl:px-[80px] tablet:pb-12 tablet:rounded-[40px] mobile:rounded-[28px] mobile:px-5 mobile:pb-10"
+            >
+              <span
+                class="line-glow mt-[2px] h-[6px] w-[155px] rounded-full bg-[#f1e28c] justify-self-end tablet:justify-self-start"
+                aria-hidden="true"
+              ></span>
+              <div
+                class="mt-[65px] grid grid-cols-[minmax(0,1fr)_minmax(0,min(673px,55%))] items-start gap-10 xl:gap-[60px] tablet:mt-[40px] tablet:grid-cols-1 tablet:gap-10 mobile:mt-[32px] mobile:gap-10"
+              >
+                <div
+                  class="mt-[19px] min-w-0 flex-1 text-right tablet:text-left tablet:mt-0"
+                >
+                  <h2
+                    class="font-display text-[48px] leading-[52px] text-snow xl:whitespace-nowrap mobile:text-[34px] mobile:leading-[40px]"
+                  >
+                    Truly <span class="text-gold">Global</span>
+                  </h2>
+                  <p
+                    class="mt-[34px] max-w-[516px] ml-auto tablet:ml-0 text-[20px] leading-[27px] tracking-body text-white 2xl:whitespace mobile:text-[17px] mobile:leading-[25px]"
+                  >
+                    To date, VistaJet passengers have flown to over 2,400
+                    airports in 96% of the world's countries, making it the
+                    first and only global aviation company.
+                  </p>
+                </div>
+                <div
+                  class="order-first tablet:order-none h-[400px] w-[673px] max-w-[55%] shrink-0 overflow-hidden rounded-[35px] tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[22px]"
+                >
+                  <img
+                    src="images/about/aboutcard1.png"
+                    alt="World map overlaid on clouds seen from an aircraft wing at sunrise"
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </article>
+            <article
+              class="grid grid-cols-1 rounded-[60px] border border-gold/25 bg-ink px-10 pt-0 pb-[73px] xl:h-[548px] xl:px-[80px] tablet:pb-12 tablet:rounded-[40px] mobile:rounded-[28px] mobile:px-5 mobile:pb-10"
+            >
+              <span
+                class="line-glow mt-[2px] h-[6px] w-[155px] rounded-full bg-[#f1e28c] justify-self-start"
+                aria-hidden="true"
+              ></span>
+              <div
+                class="mt-[65px] grid grid-cols-[minmax(0,1fr)_minmax(0,min(673px,55%))] items-start gap-10 xl:gap-[60px] tablet:mt-[40px] tablet:grid-cols-1 tablet:gap-10 mobile:mt-[32px] mobile:gap-10"
+              >
+                <div class="mt-[19px] min-w-0 flex-1 text-left tablet:mt-0">
+                  <h2
+                    class="font-display text-[48px] leading-[52px] text-snow mobile:text-[34px] mobile:leading-[40px]"
+                  >
+                    <span class="text-gold">Iconic</span> Private Jets
+                  </h2>
+                  <p
+                    class="mt-[34px] max-w-[516px] text-[20px] leading-[27px] tracking-body text-white mobile:text-[17px] mobile:leading-[25px]"
+                  >
+                    VistaJet's distinctive silver and red aircraft, welcome
+                    passengers all over the world. Renowned for its consistency,
+                    you know exactly what will be waiting for you on the tarmac,
+                    no matter where you are flying from.
+                  </p>
+                  <div class="mt-[59px] flex justify-start mobile:mt-8">
+                    <a
+                      href="#"
+                      class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-[252px] max-w-full !px-0"
+                      ><span>Discover Aircraft</span
+                      ><i
+                        class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                      ></i
+                    ></a>
+                  </div>
+                </div>
+                <div
+                  class="h-[400px] w-[673px] max-w-[55%] shrink-0 overflow-hidden rounded-[35px] tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[22px]"
+                >
+                  <img
+                    src="images/about/aboutcard2.png"
+                    alt="Silver private jet on the apron at sunset"
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </article>
+            <article
+              class="grid grid-cols-1 rounded-[60px] border border-gold/25 bg-ink px-10 pt-0 pb-[73px] xl:h-[548px] xl:px-[80px] tablet:pb-12 tablet:rounded-[40px] mobile:rounded-[28px] mobile:px-5 mobile:pb-10"
+            >
+              <span
+                class="line-glow mt-[2px] h-[6px] w-[155px] rounded-full bg-[#f1e28c] justify-self-end tablet:justify-self-start"
+                aria-hidden="true"
+              ></span>
+              <div
+                class="mt-[65px] grid grid-cols-[minmax(0,1fr)_minmax(0,min(673px,55%))] items-start gap-10 xl:gap-[60px] tablet:mt-[40px] tablet:grid-cols-1 tablet:gap-10 mobile:mt-[32px] mobile:gap-10"
+              >
+                <div
+                  class="mt-[19px] min-w-0 flex-1 text-right tablet:text-left tablet:mt-0"
+                >
+                  <h2
+                    class="font-display text-[48px] leading-[52px] text-snow xl:whitespace-nowrap mobile:text-[34px] mobile:leading-[40px]"
+                  >
+                    Discover
+                    <span class="text-gold"
+                      >The Best<br class="hidden xl:inline" />
+                      Way</span
+                    >
+                    To Fly
+                  </h2>
+                  <p
+                    class="mt-[34px] max-w-[516px] ml-auto tablet:ml-0 text-[20px] leading-[27px] tracking-body text-white 2xl:whitespace mobile:text-[17px] mobile:leading-[25px]"
+                  >
+                    Program is our bespoke flight hour subscription plan,
+                    offering guaranteed availability at a fixed hourly rate,
+                    with no depreciation and no capital risk. For less frequent
+                    flying you can request a charter flight.
+                  </p>
+                  <p
+                    class="mt-[26px] ml-auto tablet:ml-0 text-[20px] leading-[27px] tracking-body text-white 2xl:whitespace-nowrap mobile:text-[17px] mobile:leading-[25px]"
+                  >
+                    For Less Frequent Flying You Can Request A Charter Flight.
+                  </p>
+                  <div
+                    class="mt-[59px] flex justify-end tablet:justify-start mobile:mt-8"
+                  >
+                    <a
+                      href="#"
+                      class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-[206px] max-w-full !px-0"
+                      ><span>Ways To Fly</span
+                      ><i
+                        class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                      ></i
+                    ></a>
+                  </div>
+                </div>
+                <div
+                  class="order-first tablet:order-none h-[400px] w-[673px] max-w-[55%] shrink-0 overflow-hidden rounded-[35px] tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[22px]"
+                >
+                  <img
+                    src="images/about/aboutcard3.png"
+                    alt="Blue and white airliner climbing through a sunset sky"
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </article>
+            <article
+              class="grid grid-cols-1 rounded-[60px] border border-gold/25 bg-ink px-10 pt-0 pb-[73px] xl:h-[548px] xl:px-[80px] tablet:pb-12 tablet:rounded-[40px] mobile:rounded-[28px] mobile:px-5 mobile:pb-10"
+            >
+              <span
+                class="line-glow mt-[2px] h-[6px] w-[155px] rounded-full bg-[#f1e28c] justify-self-start"
+                aria-hidden="true"
+              ></span>
+              <div
+                class="mt-[65px] grid grid-cols-[minmax(0,1fr)_minmax(0,min(673px,55%))] items-start gap-10 xl:gap-[60px] tablet:mt-[40px] tablet:grid-cols-1 tablet:gap-10 mobile:mt-[32px] mobile:gap-10"
+              >
+                <div class="mt-[19px] min-w-0 flex-1 text-left tablet:mt-0">
+                  <h2
+                    class="font-display text-[48px] leading-[52px] text-snow xl:whitespace mobile:text-[34px] mobile:leading-[40px]"
+                  >
+                    <span class="text-gold">Our Team</span>
+                  </h2>
+                  <p
+                    class="mt-[34px] max-w-[516px] text-[20px] leading-[27px] tracking-body text-white 2xl:whitespace mobile:text-[17px] mobile:leading-[25px]"
+                  >
+                    Available 24/7, 4,000 aviation experts comprising of over 60
+                    nationalities arrange every aspect of any flight itinerary
+                    for a seamless connection around the world. On board, our
+                    Cabin Crew make every traveler's comfort and needs their
+                    highest priority. VistaJet Ltd. Cabin Hosts are trained by
+                    the British Butler Institute, Norland College and Wine &
+                    Spirit Education Trust, in pet first aid, as well as being
+                    the first in private aviation to have in-house MedAire
+                    instructors to ensure passengers enjoy unrivaled service as
+                    standard on every flight.
+                  </p>
+                </div>
+                <div
+                  class="h-[400px] w-[673px] max-w-[55%] shrink-0 overflow-hidden rounded-[35px] tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[22px]"
+                >
+                  <img
+                    src="images/about/aboutcard4.png"
+                    alt="A smiling traveller handing a passport to a cabin crew member at check-in"
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </article>
+            <article
+              class="grid grid-cols-1 rounded-[60px] border border-gold/25 bg-ink px-10 pt-0 pb-[73px] xl:h-[548px] xl:px-[80px] tablet:pb-12 tablet:rounded-[40px] mobile:rounded-[28px] mobile:px-5 mobile:pb-10"
+            >
+              <span
+                class="line-glow mt-[2px] h-[6px] w-[155px] rounded-full bg-[#f1e28c] justify-self-end tablet:justify-self-start"
+                aria-hidden="true"
+              ></span>
+              <div
+                class="mt-[65px] grid grid-cols-[minmax(0,1fr)_minmax(0,min(673px,55%))] items-start gap-10 xl:gap-[60px] tablet:mt-[40px] tablet:grid-cols-1 tablet:gap-10 mobile:mt-[32px] mobile:gap-10"
+              >
+                <div
+                  class="mt-[19px] min-w-0 flex-1 text-right tablet:text-left tablet:mt-0"
+                >
+                  <h2
+                    class="font-display text-[48px] leading-[52px] text-snow xl:whitespace-nowrap mobile:text-[34px] mobile:leading-[40px]"
+                  >
+                    <span class="text-gold">Safety</span> First
+                  </h2>
+                  <p
+                    class="mt-[34px] max-w-[516px] ml-auto tablet:ml-0 text-[20px] leading-[27px] tracking-body text-white mobile:text-[17px] mobile:leading-[25px]"
+                  >
+                    royal aviation club places the safety, security and
+                    wellbeing of customers and staff above all else and offers
+                    the highest global standard for business aviation operators.
+                    VistaJet Ltd. holds the highest safety ratings across flight
+                    operations, aircraft maintenance, safety risk‑assessment and
+                    compliance standards.
+                  </p>
+                  <div
+                    class="mt-[59px] flex justify-end tablet:justify-start mobile:mt-8"
+                  >
+                    <a
+                      href="#"
+                      class="gold-frame inline-flex h-[55px] items-center justify-center gap-[13px] whitespace-nowrap rounded-full px-[32px] font-display text-[22px] leading-none text-snow w-[223px] max-w-full !px-0"
+                      ><span>Discover More</span
+                      ><i
+                        class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+                      ></i
+                    ></a>
+                  </div>
+                </div>
+                <div
+                  class="order-first tablet:order-none h-[400px] w-[673px] max-w-[55%] shrink-0 overflow-hidden rounded-[35px] tablet:h-auto tablet:w-full tablet:max-w-full tablet:aspect-[673/400] mobile:rounded-[22px]"
+                >
+                  <img
+                    src="images/about/aboutcard5.png"
+                    alt="A flight attendant demonstrating an oxygen mask during a safety briefing"
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        class="grid grid-cols-[minmax(0,1fr)] grid-rows-[minmax(0,1fr)] mt-[153px] h-[825px] overflow-hidden bg-ink tablet:mt-24 tablet:h-[680px] mobile:mt-16 mobile:h-[600px]"
+        aria-labelledby="green-title"
+      >
+        <img
+          src="images/about/aboutbg.png"
+          alt="Aerial view of a white and blue private jet on a dark apron with yellow taxi markings"
+          class="col-start-1 row-start-1 h-full w-[1920px] max-w-none justify-self-center self-start object-cover"
+          loading="lazy"
+        />
+        <div
+          class="col-start-1 row-start-1 h-full w-full tablet:bg-black/45"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="col-start-1 row-start-1 z-10 grid grid-cols-1 mx-auto w-full max-w-[1568px] px-6 pt-[102px] tablet:pt-16 mobile:pt-12"
+        >
+          <h2
+            id="green-title"
+            class="font-display text-[56px] leading-[62px] tracking-[0.03em] text-snow 2xl:whitespace-nowrap tablet:text-[42px] tablet:leading-[48px] mobile:text-[28px] mobile:leading-[34px]"
+          >
+            We Are Committed To Making<br class="hidden 2xl:inline" />
+            <span class="text-gold">Aviation Better</span>
+          </h2>
+          <p
+            class="mt-[28px] max-w-[720px] text-[20px] leading-[27px] tracking-body text-white 2xl:whitespace-nowrap mobile:text-[17px] mobile:leading-[25px]"
+          >
+            Now More Than Ever, Corporations Have A Vital Role In Mitigating The
+            <br class="hidden 2xl:inline" />Impact Of Climate Change And
+            Protecting The Planet. That Is Why At
+            <br class="hidden 2xl:inline" />VistaJet We Have Been Incorporating
+            Environmental Initiatives Across
+            <br class="hidden 2xl:inline" />Operations Globally.
+          </p>
+          <div class="mt-[47px] tablet:mt-8">
+            <a
+              href="#"
+              class="gold-frame inline-flex h-[67px] items-center justify-center gap-[21px] whitespace-nowrap rounded-full px-[31px] font-display text-[24px] leading-none text-snow w-[249px]"
+              ><span>Sustainability</span
+              ><i
+                class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01 text-gold"
+              ></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      id="contact"
+      class="border border-gold/40 mt-[328px] font-body bg-ink tablet:mt-24 mobile:mt-16"
+    >
+      <div class="mx-auto w-full max-w-[1568px] px-6">
+        <div
+          class="mx-auto grid max-w-[1520px] grid-cols-2 gap-x-10 gap-y-12 pt-[66px] xl:grid-cols-[468fr_436fr_402fr] xl:gap-x-[60px] xl:gap-y-0 2xl:gap-x-[107px] mobile:grid-cols-1"
+        >
+          <div class="col-span-2 xl:col-span-1 mobile:col-span-1">
+            <img
+              src="images/logo.png"
+              alt="Royal Aviation logo"
+              loading="lazy"
+              class="block object-cover"
+            />
+            <p
+              class="max-w-[468px] text-[23px] font-body leading-[29px] mt-[40px] text-white"
+            >
+              Royal Aviation, a trusted choice for those valuing time, service,
+              and reliability Explore unique features to customize your private
+              flying experience your way
+            </p>
+            <p
+              class="mt-[68px] flex items-center gap-[8px] text-[23px] leading-[31px] text-white tablet:mt-8"
+            >
+              <a href="tel:+911140689002 flex items-center">
+                <i class="hgi hgi-stroke hgi-rounded hgi-call-02 text-gold"></i>
+                <span>IN +91-11-40689002</span></a
+              >
+            </p>
+          </div>
+          <div
+            aria-label="Footer"
+            class="grid grid-cols-[auto_auto] justify-start gap-x-10 xl:mt-[48px] xl:grid-cols-[137px_197px] xl:justify-between xl:gap-x-0 mobile:grid-cols-2 mobile:gap-x-4"
+          >
+            <ul class="flex flex-col gap-[20px]">
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Product</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Membership</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Our Fleet</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Airports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >E-Book</a
+                >
+              </li>
+            </ul>
+            <ul class="flex flex-col gap-[20px]">
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Blogs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Career</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >Terms &amp; Condition</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >News &amp; Media</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block whitespace-nowrap text-[23px] leading-[31px] text-white transition-colors hover:text-gold mobile:whitespace-normal mobile:text-[19px]"
+                  >FAQs</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-start xl:mt-[48px] xl:items-end">
+            <div class="w-full max-w-[402px]">
+              <p class="text-[23px] leading-[31px] text-white">
+                Get The Latest Update
+              </p>
+              <form
+                action="#"
+                method="post"
+                class="mt-[23px] flex h-[61px] items-center justify-between rounded-full border border-white/15 bg-ink py-[6px] pl-[31px] pr-[6px] mobile:pl-5"
+              >
+                <label for="f-news" class="sr-only">Enter your email</label>
+                <input
+                  id="f-news"
+                  type="email"
+                  name="newsletter"
+                  placeholder="Enter Your Email"
+                  class="min-w-0 flex-1 bg-transparent text-[20px] leading-[31px] text-white/80 placeholder:text-white/80 focus:outline-none mobile:text-[16px]"
+                />
+                <button
+                  type="submit"
+                  class="h-[49px] w-[141px] shrink-0 rounded-full bg-gold text-[22px] font-medium leading-[31px] text-ink btn-solid"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+            <div class="mt-[104px] flex gap-[10px] tablet:mt-10">
+              <a
+                href="https://x.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-new-twitter text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/"
+                class="grid h-[50px] w-[50px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-instagram text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.facebook.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i
+                  class="hgi hgi-stroke hgi-rounded hgi-facebook-02 text-gold"
+                ></i
+              ></a>
+              <a
+                href="https://www.youtube.com/"
+                class="grid h-[50px] w-[50px] text-[24px] place-items-center rounded-full border border-gold/60 text-gold transition-colors hover:bg-gold/10"
+                ><i class="hgi hgi-stroke hgi-rounded hgi-youtube text-gold"></i
+              ></a>
+            </div>
+            <p
+              class="mt-[38px] flex flex-wrap items-center gap-y-1 text-[23px] leading-[31px] text-white"
+            >
+              <span>Delhi</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Mumbai</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Bengaluru</span
+              ><span
+                class="mx-[10px] inline-block h-[25px] w-[2px] translate-y-[2px] bg-gold"
+                aria-hidden="true"
+              ></span
+              ><span>Dubai</span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="mx-auto mt-[71px] max-w-[1520px] border-t border-gold/50 pb-[53px] pt-[30px] tablet:mt-12"
+        >
+          <p class="text-[23px] leading-[31px] text-white">
+            &copy; 2014-2024 All Right Reserved By
+            <a href="index.html">Royal Aviation Services Private Limited</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
